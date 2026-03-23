@@ -4,15 +4,15 @@ include <modules/module_gridfinity_block.scad>
 // Select model
 part = "tile";  // [ board, tile, pawn, knight, bishop, rook, queen, king ]
 
-/* [model detail] */
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments 
+/* [模型细节 / model detail] */
+// 最小角度精度 / minimum angle for a fragment (fragments = 360/fa).  Low is more fragments 
 fa = 6; 
-// minimum size of a fragment.  Low is more fragments
+// 最小面精度 / minimum size of a fragment.  Low is more fragments
 fs = 0.1; 
-// number of fragments, overrides $fa and $fs
+// 段数精度 / number of fragments, overrides $fa and $fs
 fn = 0;  
 
-/* [Hidden] */
+/* [隐藏 / Hidden] */
 module end_of_customizer_opts() {}
 
 //Some online generators do not like direct setting of fa,fs,fn

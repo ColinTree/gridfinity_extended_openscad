@@ -61,60 +61,60 @@ marble_bottom_highlight = false;
 /*<!!end gridfinity_marble!!>*/
 
 /*<!!start gridfinity_basic_cup!!>*/
-/* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [杯型基础 / General Cup] */
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 width = [2, 0]; //0.5
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [1, 0]; //0.5
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴 / Z dimension excluding. grid units (multiples of 7mm) or mm.
 height = [3, 0]; //3
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁厚度 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
-//under size the bin top by this amount to allow for better stacking
+//顶部余量 / under size the bin top by this amount to allow for better stacking
 headroom = 0; // 0.1
 
-/* [Cup Lip] */
-// Style of the cup lip
+/* [杯口边沿 / Cup Lip] */
+// 边沿样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 内沿收缩阈值 / Below this the inside of the lip will be reduced for easier access.
 lip_side_relief_trigger = [1,1]; //0.1
-// Create a relief in the lip
+// 边沿镂空高度 / Create a relief in the lip
 lip_top_relief_height = 0; // 0.1
-// how much of the lip to retain on each end
+// 边沿镂空宽度 / how much of the lip to retain on each end
 lip_top_relief_width = 8.5; // 0.1
-// add a notch to the lip to prevent sliding.
+// 防滑凸起 / add a notch to the lip to prevent sliding.
 lip_top_notches  = true;
-// enable lip clip for connection cups
+// 连接卡扣 / enable lip clip for connection cups
 lip_clip_position = "disabled"; //[disabled, intersection]
 
-/* [Base] */
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+/* [底座 / Base] */
+// 底板最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 1.5;
-// AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
+// 底部网格细分 / AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
 sub_pitch = 1; //[1:"disabled",2:"half pitch",3:"third pitch",4:"quarter pitch"]
 
-/* [debug] */
+/* [调试 / debug] */
 //Slice the bin
 cut = [0,0,0];
-// enable loging of help messages during render.
+// 调试日志 / enable loging of help messages during render.
 enable_help = "disabled"; //[info,debug,trace]
 
-/* [Model detail] */
-//assign colours to the bin
+/* [模型细节 / Model detail] */
+//颜色显示 / assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
-//where to render the model
+//渲染位置 / where to render the model
 render_position = "center"; //[default,center,zero]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 最小角度精度 / minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小面精度 / minimum size of a fragment.  Low is more fragments
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 段数精度 / number of fragments, overrides $fa and $fs
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
 /*<!!end gridfinity_basic_cup!!>*/
 
-/* [Hidden] */
+/* [隐藏 / Hidden] */
 module end_of_customizer_opts() {}
 
 //Some online generators do not like direct setting of fa,fs,fn
