@@ -4,23 +4,23 @@ use <modules/module_gridfinity_block.scad>
 use <modules/module_gridfinity_lid.scad>
 
 /* [Size] */
-// X dimension. grid units (multiples of 42mm) or mm.
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 width = [2, 0]; //0.1
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [1, 0]; //0.1
 center_fill_grid_x = true;
 center_fill_grid_y = true;
 
-/* [Lid] */
-// Plate Style
+/* [盖子 / Lid] */
+// 底板样式 / Plate Style
 Lid_Options = "default";//[default, flat:Flat Removes the internal grid from base, halfpitch: halfpitch base, efficient]
 
-/* [Base Plate Options] */
-// Enable magnets in the bin corner
+/* [底板设置 / Base Plate Options] */
+// 启用角落磁铁 / Enable magnets in the bin corner
 Enable_Magnets = true;
-//size of magnet, diameter and height. Zacks original used 6.5 and 2.4
+//磁铁尺寸 / size of magnet, diameter and height. Zacks original used 6.5 and 2.4
 Magnet_Size = [6.5, 2.4];  // .1
-//Reduce the frame wall size to this value
+//框架壁高 / Reduce the frame wall size to this value
 Reduced_Wall_Height = -1; //0.1
 
 /* [Lid Options] */
@@ -30,29 +30,29 @@ Lid_Efficient_Base_Height = 0.4;// [0.4:0.1:1]
 // Thickness of the efficient floor
 Lid_Efficient_Floor_Thickness = 0.7;// [0.7:0.1:7]
 
-/* [debug] */
+/* [调试 / debug] */
 //Slice along the x axis
 cutx = 0; //0.1
 //Slice along the y axis
 cuty = 0; //0.1
-// enable loging of help messages during render.
+// 调试日志 / enable loging of help messages during render.
 enable_help = "disabled"; //[info,debug,trace]
 
-/* [Model detail] */
-//assign colours to the bin
+/* [模型细节 / Model detail] */
+//颜色显示 / assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
-//where to render the model
+//渲染位置 / where to render the model
 render_position = "center"; //[default,center,zero]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 最小角度精度 / minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小面精度 / minimum size of a fragment.  Low is more fragments
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 段数精度 / number of fragments, overrides $fa and $fs
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
 
-/* [Hidden] */
+/* [隐藏 / Hidden] */
 module end_of_customizer_opts() {}
 
 //Some online generators do not like direct setting of fa,fs,fn

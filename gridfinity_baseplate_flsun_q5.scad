@@ -9,7 +9,7 @@ M4_d = 4.2; // diameter needed for an M4 bolt.
 
 wallThickness = 0.2; //Extend and imbed in to wall to fit around corner
 
-/* [Hidden] */
+/* [隐藏 / Hidden] */
 module end_of_customizer_opts() {}
 
 from_ends = (ear_hole_x - gf_pitch*4) / 2;

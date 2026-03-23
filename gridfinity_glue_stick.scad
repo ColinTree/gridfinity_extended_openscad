@@ -6,7 +6,7 @@ stick_diameter = 30;
 easement_z = 0.7; // a slightly large opening at the top for compliance while inserting.
 minimum_wall = 4;
 
-/* [Hidden] */
+/* [隐藏 / Hidden] */
 $fn = 64;
 module end_of_customizer_opts() {}
 
