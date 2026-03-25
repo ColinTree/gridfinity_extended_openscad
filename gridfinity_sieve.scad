@@ -4,85 +4,85 @@ use <modules/module_gridfinity_block.scad>
 
 /*<!!start gridfinity_sieve!!>*/
 /* [Sieve] */
-// Should the grid be square or hex
+// 网格形状：方形或六边形 / Should the grid be square or hex
 sieve_grid_style = "hexgrid"; //[grid, hexgrid]
-// Spacing around the holes
+// 孔间距 / Spacing around the holes
 sieve_strength = 3; //0.1
-// rotate the grid
+// 旋转网格 / rotate the grid
 sieve_rotate_grid = false;
-// 45 deg chamfer added to the top of the hole (mm)
+// 孔顶部45度倒角 / 45 deg chamfer at top of hole (mm)
 sieve_hole_chamfer = 0; //0.5
 // The number of sides for the hole, when custom is selected
 sieve_hole_sides = 6;
 // The size the hole, when custom is selected
 sieve_cell_size = [10, 10]; //0.1
-// Spacing around the compartments
+// 隔室间距 / Spacing around the compartments
 sieve_compartment_clearance= 7; //0.1
 sieve_compartment_fill = "none"; //["none", "space", "crop"]
 /*<!!end gridfinity_sieve!!>*/
 
 /*<!!start gridfinity_basic_cup!!>*/
 /* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+// X轴 / X dimension. 网格单位（42mm倍数）或mm.
 width = [2, 0]; //0.5
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. 网格单位（42mm倍数）或mm.
 depth = [1, 0]; //0.5
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴高度（不含） / Z dimension excluding. 网格单位（7mm倍数）或mm.
 height = [3, 0]; //0.1
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁厚度 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
-//under size the bin top by this amount to allow for better stacking
+//收缩顶部尺寸以便叠放 / under size the bin top
 headroom = 0.8; // 0.1
 
 /* [Cup Lip] */
-// Style of the cup lip
+// 杯沿样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 低于此值将缩减内侧杯沿以便拿取 / Below this the inside of the lip will be reduced.
 lip_side_relief_trigger = [1,1]; //0.1
 // Create a relie
 lip_top_relief_height = -1; // 0.1
-// add a notch to the lip to prevent sliding.
+// 添加防滑缺口 / add a notch to the lip.
 lip_top_notches  = true;
 
 /* [Base] */
 // (Zack's design uses magnet diameter of 6.5)
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+// 底座镂空上方最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 2;
 cavity_floor_radius = -1;// .1
-// Efficient floor option saves material and time, but the internal floor is not flat
+// 节省材料的底板模式 / Efficient floor option, but the internal floor is not flat
 efficient_floor = "smooth";//[off,on,rounded,smooth]
-// Removes the internal grid from base the shape
+// 去除底部内部网格 / Removes the internal grid
 flat_base = true;
 
 /* [Label] */
 label_style = "disabled"; //[disabled: no label, normal:normal, gflabel:gflabel basic label, pred:pred - labels by pred, cullenect:Cullenect click labels V2,  cullenect_legacy:Cullenect click labels v1]
-// Include overhang for labeling (and specify left/right/center justification)
+// 包含标签悬挑 / Include overhang for labeling (and specify left/right/center justification)
 label_position = "left"; // [left, right, center, leftchamber, rightchamber, centerchamber]
 // Width, Depth, Height, Radius. Width in Gridfinity units of 42mm, Depth and Height in mm, radius in mm. Width of 0 uses full width. Height of 0 uses Depth, height of -1 uses depth*3/4.
 label_size = [0,14,0,0.6]; // 0.01
 // Size in mm of relief where appropriate. Width, depth, height, radius
 label_relief = [0,0,0,0.6]; // 0.1
-// wall to enable on, front, back, left, right. 0: disabled; 1: enabled;
+// 启用墙面，前、后、左、右 / wall to enable on, front, back, left, right. 0: disabled; 1: enabled;
 label_walls=[0,1,0,0];  //[0:1:1]
 
 /* [debug] */
 //Slice the bin
 cut = [0,0,0]; //0.1
-// enable loging of help messages during render.
+// 渲染时启用帮助日志 / enable logging of help messages.
 enable_help = "disabled"; //[info,debug,trace]
 
 /* [Model detail] */
-//assign colours to the bin
+//为托盒指定颜色 / assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
-//where to render the model
+//模型渲染位置 / where to render the model
 render_position = "center"; //[default,center,zero]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 片段最小角度 / minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 片段最小尺寸 / minimum size of a fragment.  Low is more fragments
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 片段数量（覆盖$fa和$fs） / number of fragments
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
 /*<!!end gridfinity_basic_cup!!>*/
 

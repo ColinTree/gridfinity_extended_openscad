@@ -18,105 +18,105 @@ divider_back_top_inset=20;
 divider_back_top_angle=45;
 
 /* [Wall Pattern] */
-// Grid wall patter
+// 墙面图案 / Grid wall pattern
 wallpattern_enabled=false;
-// Style of the pattern
+// 图案样式 / Style of the pattern
 wallpattern_style = "hexgrid"; //[hexgrid, grid, voronoi, voronoigrid, voronoihexgrid, brick, brickoffset]
-// Spacing between pattern
+// 图案间距 / Spacing between pattern
 wallpattern_strength = 2; //0.1
-// wall to enable on, front, back, left, right.
+// 启用墙面，前、后、左、右 / wall to enable on, front, back, left, right.
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
-// rotate the grid
+// 旋转网格 / rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+//孔尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 将图案添加到分隔板 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
-//Number of sides of the hole op
+//孔的边数 / Number of sides of the hole
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
-//Radius of corners
+//圆角半径 / Radius of corners
 wallpattern_hole_radius = 0.5;
-// pattern fill mode
+// 图案填充模式 / pattern fill mode
 wallpattern_fill = "none"; //[none, space, crop, crophorizontal, cropvertical, crophorizontal_spacevertical, cropvertical_spacehorizontal, spacevertical, spacehorizontal]
 // border around the wall pattern, default is wall thickness
 wallpattern_border = 0;
-// depth of imprint in mm, 0 = is wall width.
+// 浮雕深度（mm），0表示整个壁厚 / depth of imprint.
 wallpattern_depth = 0; // 0.1
-//grid pattern hole taper
+//网格图案孔锥角 / grid pattern hole taper
 wallpattern_pattern_grid_chamfer = 0; //0.1
 //voronoi pattern noise,
 wallpattern_pattern_voronoi_noise = 0.75; //0.01
-//brick pattern center weight
+//砖块图案中心权重 / brick pattern center weight
 wallpattern_pattern_brick_weight = 5;
 //$fs for floor pattern, min size face.
 wallpattern_pattern_quality = 0.4;//0.1:0.1:2
 
 /* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+// X轴 / X dimension. 网格单位（42mm倍数）或mm.
 width = [3, 0]; //0.5
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. 网格单位（42mm倍数）或mm.
 depth = [2, 0]; //0.5
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴高度（不含） / Z dimension excluding. 网格单位（7mm倍数）或mm.
 height = [1, 0]; //0.1
 // Fill in solid block (overrides all following options)
 filled_in = false;
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁厚度 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
 position = "center"; //[default,center,zero]
 
 /* [Cup Lip] */
-// Style of the cup lip
+// 杯沿样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 低于此值将缩减内侧杯沿以便拿取 / Below this the inside of the lip will be reduced.
 lip_side_relief_trigger = [1,1]; //0.1
 // Create a relie
 lip_top_relief_height = -1; // 0.1
-// add a notch to the lip to prevent sliding.
+// 添加防滑缺口 / add a notch to the lip.
 lip_top_notches  = false;
 
 /* [Base] */
-//size of magnet, diameter and height. Zack's original used 6.5 and 2.4
+//磁铁尺寸，直径和高度 / size of magnet, diameter and height. Zack's original used 6.5 and 2.4
 magnet_size = [6.5, 2.4];  // .1
-//create relief for magnet removal
+//为磁铁取出创建凹槽 / create relief for magnet removal
 magnet_easy_release = "auto";//["off","auto","inner","outer"]
-//size of screw, diameter and height. Zack's original used 3 and 6
+//螺丝尺寸，直径和高度 / size of screw, diameter and height. Zack's original used 3 and 6
 screw_size = [3, 6]; // .1
-//size of center magnet, diameter and height.
+//中心磁铁尺寸，直径和高度 / size of center magnet, diameter and height.
 center_magnet_size = [0,0];
-// Sequential Bridging hole overhang remedy is active only when both screws and magnets are nonzero (and this option is selected)
+// 顺序桥接悬空修正 / Sequential Bridging hole overhang remedy is active only when both screws and magnets are nonzero (and this option is selected)
 hole_overhang_remedy = 2;
-//Only add attachments (magnets and screw) to box corners (prints faster).
+//仅在箱角添加附件（磁铁和螺丝） / Only add attachments to box corners (prints faster).
 box_corner_attachments_only = "enabled"; //["disabled","enabled","aligned"]
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+// 底座镂空上方最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 0.7;
 cavity_floor_radius = -1;// .1
-// Efficient floor option saves material and time, but the internal floor is not flat
+// 节省材料的底板模式 / Efficient floor option, but the internal floor is not flat
 efficient_floor = "off";//[off,on,rounded,smooth]
-// AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
+// 子间距（半间距）/ AKA half pitch to allow sub-cell offsets
 sub_pitch = 1; //[1:"disabled",2:"half pitch",3:"third pitch",4:"quarter pitch"]
-// Removes the internal grid from base the shape
+// 去除底部内部网格 / Removes the internal grid
 flat_base = "off";
 
 /* [debug] */
-//Slice along the x axis
+//沿X轴切片 / Slice along the x axis
 cutx = 0; //0.1
-//Slice along the y axis
+//沿Y轴切片 / Slice along the y axis
 cuty = 0; //0.1
-// enable loging of help messages during render.
+// 渲染时启用帮助日志 / enable logging of help messages.
 enable_help = "disabled"; //[info,debug,trace]
 
 /* [Model detail] */
-//assign colours to the bin, will may
+//为托盒指定颜色 / assign colours to the bin, will may
 set_colour = "enable"; //[disabled, enable, preview, lip]
-//where to render the model
+//模型渲染位置 / where to render the model
 render_position = "center"; //[default,center,zero]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 片段最小角度 / minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 片段最小尺寸 / minimum size of a fragment.  Low is more fragments
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 片段数量（覆盖$fa和$fs） / number of fragments
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
 
 /* [Hidden] */
