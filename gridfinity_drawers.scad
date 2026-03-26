@@ -13,36 +13,36 @@ include <modules/polyround.scad>
 use <modules/module_item_holder.scad>
 include <modules/module_patterns.scad>
 
-/* [Render] */
-// select what to render
+/* [渲染 / Render] */
+// 选择渲染内容 / select what to render
 render_choice = "everything"; //[everything:Everything, onedrawer:Single Drawer, drawers:All drawers, chest:Chest]
 position="center"; //["center","zero"]
 
-/* [Chest] */
-//Inner width of drawer in Gridfinity units
+/* [柜体 / Chest] */
+// 抽屉内部宽度（Gridfinity单位）/ Inner width of drawer in Gridfinity units
 drawer_inner_width = 4;
-//Inner depth of drawer in Gridfinity units
+// 抽屉内部深度（Gridfinity单位）/ Inner depth of drawer in Gridfinity units
 drawer_inner_depth = 3;
-//Inner height of drawer in Gridfinity units
+// 抽屉内部高度（Gridfinity单位）/ Inner height of drawer in Gridfinity units
 drawer_inner_height = 4;
-//Number of drawers
+// 抽屉数量 / Number of drawers
 drawer_count = 3;
 drawer_enable_custom_sizes = false;
-//Inner height of drawer in Gridfinity units. Edit in script for more than 4 items.
+// 自定义抽屉高度（超过4项需编辑脚本）/ Inner height of drawer in Gridfinity units. Edit in script for more than 4 items.
 drawer_custom_sizes = [1,2,3,4];
-//Add clearance inside the drawers for the bins. Width, depth and height. Default is 0.25
+// 抽屉内间隙（宽、深、高），默认0.25 / Add clearance inside the drawers for the bins. Width, depth and height. Default is 0.25
 drawer_clearance = [0.25,0.25,0.25];
-//Add clearance inside the chest for the drawer. width, depth and height. Default is 0.25
+// 柜体内抽屉间隙（宽、深、高），默认0.25 / Add clearance inside the chest for the drawer. width, depth and height. Default is 0.25
 chest_clearance = [0.25,0.25,0.25];
-//Wall thickness of the chest.
+// 柜体壁厚 / Wall thickness of the chest.
 chest_wall_thickness = 2; // 0.1
-//Thickness of drawer slides in mm. 0 is uses wall thickness.
+// 抽屉导轨厚度（mm），0=使用壁厚 / Thickness of drawer slides in mm. 0 is uses wall thickness.
 chest_drawer_slide_thickness = 0;
-//Width of drawer slies in mm. 0 is full chest width.
+// 抽屉导轨宽度（mm），0=全柜宽 / Width of drawer slies in mm. 0 is full chest width.
 chest_drawer_slide_width = 10;
 
-/* [Drawer] */
-// Handle size width, depth, height, and radius. Height, less than 0 drawerHeight/abs(height). radius, -1 = depth/2.
+/* [抽屉 / Drawer] */
+// 把手尺寸（宽、深、高、圆角）。高度<0时=抽屉高/abs(高度)，圆角-1=深度/2 / Handle size width, depth, height, and radius. Height, less than 0 drawerHeight/abs(height). radius, -1 = depth/2.
 handle_size = [4, 10, -1, -1];
 handle_vertical_center = false;
 handle_cut_factor=0.5;
@@ -52,80 +52,80 @@ drawer_base = "default"; //[grid:Grid only, floor:floor only, default:Grid and f
 drawer_enable_magnet = true;
 drawer_magnet_size = [6.5, 2.4];  // .1
 
-/* [Chest Top Plate] */
+/* [柜体顶板 / Chest Top Plate] */
 chest_top_wallpattern_style = "none"; //[none, grid, gridrotated, hexgrid,hexgridrotated, voronoi,voronoigrid,voronoihexgrid]
-// Plate Style
+// 顶板样式 / Plate Style
 chest_top_style = "none"; //[none: None, baseplate:Base Plate, lugs: Supportless feet]
-// Enable magnets in the bin corner
+// 启用顶板磁铁 / Enable magnets in the bin corner
 chest_top_base_plate_enable_magnets = true;
-// (Zack's design uses magnet diameter of 6.5, 2.4)
+// 磁铁尺寸（Zack原版：6.5, 2.4）/ (Zack's design uses magnet diameter of 6.5, 2.4)
 chest_top_base_plate_magnet_size = [6.5, 2.4];  // .1
-//Reduce the frame wall size to this value
+// 框架墙高度缩减 / Reduce the frame wall size to this value
 chest_top_base_plate_reduced_wall_height = -1; //0.1
 chest_top_base_plate_reduced_wall_taper = false;
 
-/* [Chest Base] */
+/* [柜体底部 / Chest Base] */
 chest_bottom_wallpattern_style = "none"; //[none, grid, gridrotated, hexgrid,hexgridrotated, voronoi,voronoigrid,voronoihexgrid]
 chest_bottom_grid = "none"; //[none: None, grid: Gridfinity grid, lugs: Supportless feet]
-//Fit clearance of chest feet
+// 柜脚配合间隙 / Fit clearance of chest feet
 chest_leg_clearance = 0.35; //.001
 
-// (Zack's design uses magnet diameter of 6.5)
+// 磁铁直径（Zack原版：6.5）/ (Zack's design uses magnet diameter of 6.5)
 magnet_diameter = 6.5;  // .1
-// (Zack's design uses depth of 6)
+// 螺钉深度（Zack原版：6）/ (Zack's design uses depth of 6)
 screw_depth = 6;
-// Sequential Bridging hole overhang remedy is active only when both screws and magnets are nonzero (and this option is selected)
+// 悬空修复（螺钉和磁铁均非零时启用）/ Sequential Bridging hole overhang remedy is active only when both screws and magnets are nonzero (and this option is selected)
 hole_overhang_remedy = 2;
-//Only add attachments (magnets and screw) to chest corners (prints faster).
+// 仅在角部添加磁铁和螺钉（加速打印）/ Only add attachments (magnets and screw) to chest corners (prints faster).
 chest_corner_attachments_only = true;
-// AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
+// 半节距，允许底部垫块以半格偏移 / AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
 sub_pitch = 1; //[1:"disabled",2:"half pitch",3:"third pitch",4:"quarter pitch"]
-// Removes the internal grid from base the shape
+// 平底模式 / Removes the internal grid from base the shape
 flat_base = "off";
 
-/* [Chest Wall Pattern] */
-// wall pattern border width. -1 defaults to chest_wall_thickness. less than 0 chest_wall_thickness/abs(wallpattern_border_width)
+/* [柜体墙壁纹样 / Chest Wall Pattern] */
+// 纹样边框宽度，-1=柜体壁厚，<0时=柜体壁厚/abs(值) / wall pattern border width. -1 defaults to chest_wall_thickness. less than 0 chest_wall_thickness/abs(wallpattern_border_width)
 wallpattern_border_width = -1;
 efficient_back = true;
-// Grid wall patter
+// 启用墙壁网格纹样 / Grid wall patter
 wallpattern_enabled=false;
-// Style of the pattern
+// 纹样样式 / Style of the pattern
 wallpattern_style = "hexgrid"; //[hexgrid, grid, voronoi, voronoigrid, voronoihexgrid, brick, brickoffset]
-// Spacing between pattern
+// 纹样间距 / Spacing between pattern
 wallpattern_strength = 2; //0.1
-// wall to enable on, front, back, left, right.
+// 启用纹样的墙面（前、后、左、右）/ wall to enable on, front, back, left, right.
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
-// rotate the grid
+// 旋转网格 / rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 在隔墙上添加纹样 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
-//Number of sides of the hole op
+// 孔洞边数 / Number of sides of the hole op
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
-//Radius of corners
+// 孔洞角部圆角半径 / Radius of corners
 wallpattern_hole_radius = 0.5;
-// pattern fill mode
+// 纹样填充模式 / pattern fill mode
 wallpattern_fill = "none"; //[none, space, crop, crophorizontal, cropvertical, crophorizontal_spacevertical, cropvertical_spacehorizontal, spacevertical, spacehorizontal]
-// border around the wall pattern, default is wall thickness
+// 纹样边框宽度，默认为壁厚 / border around the wall pattern, default is wall thickness
 wallpattern_border = 0;
-// depth of imprint in mm, 0 = is wall width.
+// 压印深度（mm），0=整墙厚度 / depth of imprint in mm, 0 = is wall width.
 wallpattern_depth = 0; // 0.1
-//grid pattern hole taper
+// 网格孔锥形倒角 / grid pattern hole taper
 wallpattern_pattern_grid_chamfer = 0; //0.1
-//voronoi pattern noise,
+// Voronoi纹样噪声 / voronoi pattern noise,
 wallpattern_pattern_voronoi_noise = 0.75; //0.01
-//brick pattern center weight
+// 砖块纹样中心权重 / brick pattern center weight
 wallpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 底板纹样最小面尺寸（$fs）/ $fs for floor pattern, min size face.
 wallpattern_pattern_quality = 0.4;//0.1:0.1:2
 
-/* [model detail] */
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+/* [模型细节 / model detail] */
+// 最小片段角度（值越小片段越多）/ minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小片段尺寸（值越小片段越多）/ minimum size of a fragment.  Low is more fragments
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 片段数量（覆盖$fa和$fs）/ number of fragments, overrides $fa and $fs
 fn = 0;
 
 /* [Hidden] */

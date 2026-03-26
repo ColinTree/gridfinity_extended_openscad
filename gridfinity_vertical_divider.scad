@@ -6,78 +6,87 @@ include <modules/module_gridfinity_cup_base.scad>
 use <modules/module_gridfinity_block.scad>
 include <modules/module_patterns.scad>
 
-/* [Divider] */
+/* [分隔板 / Divider] */
+// 分隔板数量 / Number of dividers
 divider_count = 4;
+// 分隔板高度（mm）/ Divider height in mm
 divider_height = 50;
+// 分隔板宽度（mm）/ Divider width in mm
 divider_width = 3;
+// 分隔板底部高度（mm）/ Divider base height in mm
 divider_base_height = 10;
+// 分隔板圆角半径 / Divider corner radius
 divider_radius = 5;
+// 前部顶部内缩（mm）/ Front top inset
 divider_front_top_inset=20;
+// 前部顶部角度 / Front top angle
 divider_front_top_angle=45;
+// 后部顶部内缩（mm）/ Back top inset
 divider_back_top_inset=20;
+// 后部顶部角度 / Back top angle
 divider_back_top_angle=45;
 
-/* [Wall Pattern] */
-// Grid wall patter
+/* [墙壁纹样 / Wall Pattern] */
+// 启用墙壁网格纹样 / Grid wall patter
 wallpattern_enabled=false;
-// Style of the pattern
+// 纹样样式 / Style of the pattern
 wallpattern_style = "hexgrid"; //[hexgrid, grid, voronoi, voronoigrid, voronoihexgrid, brick, brickoffset]
-// Spacing between pattern
+// 纹样间距 / Spacing between pattern
 wallpattern_strength = 2; //0.1
-// wall to enable on, front, back, left, right.
+// 启用纹样的墙面（前、后、左、右）/ wall to enable on, front, back, left, right.
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
-// rotate the grid
+// 旋转网格 / rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 在隔墙上添加纹样 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
-//Number of sides of the hole op
+// 孔洞边数 / Number of sides of the hole op
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
-//Radius of corners
+// 孔洞角部圆角半径 / Radius of corners
 wallpattern_hole_radius = 0.5;
-// pattern fill mode
+// 纹样填充模式 / pattern fill mode
 wallpattern_fill = "none"; //[none, space, crop, crophorizontal, cropvertical, crophorizontal_spacevertical, cropvertical_spacehorizontal, spacevertical, spacehorizontal]
-// border around the wall pattern, default is wall thickness
+// 纹样边框宽度，默认为壁厚 / border around the wall pattern, default is wall thickness
 wallpattern_border = 0;
-// depth of imprint in mm, 0 = is wall width.
+// 压印深度（mm），0=整墙厚度 / depth of imprint in mm, 0 = is wall width.
 wallpattern_depth = 0; // 0.1
-//grid pattern hole taper
+// 网格孔锥形倒角 / grid pattern hole taper
 wallpattern_pattern_grid_chamfer = 0; //0.1
-//voronoi pattern noise,
+// Voronoi纹样噪声 / voronoi pattern noise,
 wallpattern_pattern_voronoi_noise = 0.75; //0.01
-//brick pattern center weight
+// 砖块纹样中心权重 / brick pattern center weight
 wallpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 底板纹样最小面尺寸（$fs）/ $fs for floor pattern, min size face.
 wallpattern_pattern_quality = 0.4;//0.1:0.1:2
 
-/* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [通用杯体 / General Cup] */
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 width = [3, 0]; //0.5
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [2, 0]; //0.5
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴 / Z dimension excluding. grid units (multiples of 7mm) or mm.
 height = [1, 0]; //0.1
-// Fill in solid block (overrides all following options)
+// 填充实心块 / Fill in solid block (overrides all following options)
 filled_in = false;
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁壁厚 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
 position = "center"; //[default,center,zero]
 
-/* [Cup Lip] */
-// Style of the cup lip
+/* [卡口 / Cup Lip] */
+// 卡口样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 低于此尺寸时缩减卡口内侧 / Below this the inside of the lip will be reduced for easier access.
 lip_side_relief_trigger = [1,1]; //0.1
-// Create a relie
+// 卡口顶部凹槽高度 / Create a relie
 lip_top_relief_height = -1; // 0.1
-// add a notch to the lip to prevent sliding.
+// 在卡口添加防滑缺口 / add a notch to the lip to prevent sliding.
 lip_top_notches  = false;
 
-/* [Base] */
-//size of magnet, diameter and height. Zack's original used 6.5 and 2.4
+/* [底部 / Base] */
+// 磁铁尺寸，直径和高度。Zack原版使用6.5和2.4 / size of magnet, diameter and height. Zack's original used 6.5 and 2.4
 magnet_size = [6.5, 2.4];  // .1
-//create relief for magnet removal
+// 磁铁取出辅助槽 / create relief for magnet removal
 magnet_easy_release = "auto";//["off","auto","inner","outer"]
 //size of screw, diameter and height. Zack's original used 3 and 6
 screw_size = [3, 6]; // .1

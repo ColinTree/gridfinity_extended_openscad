@@ -1,15 +1,15 @@
 include <modules/module_gridfinity_block.scad>
 
-/* [model] */
-// Select model
+/* [模型 / model] */
+// 选择模型 / Select model
 part = "tile";  // [ board, tile, pawn, knight, bishop, rook, queen, king ]
 
-/* [model detail] */
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments 
+/* [模型细节 / model detail] */
+// 最小片段角度（值越小片段越多）/ minimum angle for a fragment (fragments = 360/fa).  Low is more fragments 
 fa = 6; 
-// minimum size of a fragment.  Low is more fragments
+// 最小片段尺寸（值越小片段越多）/ minimum size of a fragment.  Low is more fragments
 fs = 0.1; 
-// number of fragments, overrides $fa and $fs
+// 片段数量（覆盖$fa和$fs）/ number of fragments, overrides $fa and $fs
 fn = 0;  
 
 /* [Hidden] */

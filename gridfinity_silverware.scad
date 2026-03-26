@@ -1,11 +1,11 @@
 include <modules/module_gridfinity.scad>
 use <modules/module_gridfinity_cup.scad>
 
-/* [Utensil count and measurements] */
-// Utensil definitions above this number are ignored
+/* [餐具数量和尺寸 / Utensil count and measurements] */
+// 超过此数量的餐具定义将被忽略 / Utensil definitions above this number are ignored
 number_of_utensils = 5;
 
-//utensil, narrow, wide, length, position
+// 餐具参数：窄端宽、宽端宽、长度、位置 / utensil, narrow, wide, length, position
 utensil_1 = [30, 0, 202, 1];
 utensil_2 = [35, 0, 181, 2];
 utensil_3 = [14, 37, 181, 3];
@@ -21,18 +21,18 @@ utensil_12 = [15, 32, 191, 12];
 utensil_13 = [15, 32, 150, 13];
 utensil_14 = [16, 24, 180, 14];
 
-// Clearance on sides and ends of utensils
+// 餐具两侧和两端的间隙 / Clearance on sides and ends of utensils
 utensil_margin = 5;  // .1
 
-// Height upper surface excluding perimeter lip. . grid units (multiples of 7mm) or mm.
+// 高度（不含卡口），网格单位（7mm的倍数）或mm / Height upper surface excluding perimeter lip. . grid units (multiples of 7mm) or mm.
 height = [0, 42];
 
-/* [Other parameters] */
-// Wall thickness [bottom, top], top -ve is ratio of bottom wall thickness
+/* [其他参数 / Other parameters] */
+// 隔墙壁厚 [底部, 顶部]，顶部负值为底部壁厚的比率 / Wall thickness [bottom, top], top -ve is ratio of bottom wall thickness
 chamber_wall_thickness = [4, -2]; //0.1
-//Reduce the wall height by this amount
+// 隔墙高度缩减量 / Reduce the wall height by this amount
 chamber_wall_headroom = 0;//0.1
-// Radius of the top of the chamber wall, -ve is ratio of top wall thickness. (disabled for bent walls)
+// 隔墙顶部圆角，负值为顶部壁厚的比率（弯折隔墙不生效）/ Radius of the top of the chamber wall, -ve is ratio of top wall thickness. (disabled for bent walls)
 chamber_wall_top_radius = -2; //0.1
 vertical_separator_bend_angle = 45;
 vertical_separator_bend_position = 0;

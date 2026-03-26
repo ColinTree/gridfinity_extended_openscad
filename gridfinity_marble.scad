@@ -5,20 +5,20 @@ use <modules/module_gridfinity_block.scad>
 use <modules/thirdparty/dotscad/ring_extrude.scad>;
 
 /*<!!start gridfinity_marble!!>*/
-/* [marbleRun] */
+/* [弹珠轨道 / marbleRun] */
 marble_style = "blank"; //[blank, dish, ramp, cup]
-//Size of the marble track. Default 19.
+// 弹珠轨道尺寸。默认19。/ Size of the marble track. Default 19.
 marble_diameter = 19;
 
-//1=42mm, 1.5=63mm, 2=84mm
+// 1=42mm, 1.5=63mm, 2=84mm
 Block_Dimention = 1; //[1, 1.5, 2]
 
-//3=21mm, 4=28mm
+// 3=21mm, 4=28mm
 Block_Layer_Height = 3; //[3, 4]
 
 Ramp_Base_Offset = 0; //0.1
 
-/* [Cup Top] */
+/* [顶部轨道 / Cup Top] */
 marble_top_style = "straight"; //[none,straight,straight_double,straight_triple,straights,ramp,ramp+dip,ramp+corner,cross,cross+dip,cross+doubledip,dip,corner,corners,cornerramp, triple_corner, straight+corner, split, bend+corner]
 marble_top_rotate = 0; //90
 marble_top_mirror = [0,0,0]; //[0:1]
@@ -26,7 +26,7 @@ marble_top_position = [0,0]; //0.1
 marble_top_profile = "auto"; //[auto, top, round, printable_round]
 marble_top_highlight = false;
 
-/* [Cup Middle] */
+/* [中间轨道 / Cup Middle] */
 marble_middle_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_middle_rotate = 0; //90
 marble_middle_mirror = [0,0,0]; //[0:1]
@@ -34,7 +34,7 @@ marble_middle_position = [0,0]; //0.1
 marble_middle_profile = "auto"; //[auto, top, round, printable_round]
 marble_middle_highlight = false;
 
-/* [Cup layer2 (42mm)] */
+/* [第2层轨道 (42mm) / Cup layer2 (42mm)] */
 marble_level2_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_level2_rotate = 0; //90
 marble_level2_mirror = [0,0,0]; //[0:1]
@@ -42,7 +42,7 @@ marble_level2_position = [0,0]; //0.1
 marble_level2_profile = "auto"; //[auto, top, round, printable_round]
 marble_level2_highlight = false;
 
-/* [Cup layer1 (21mm)] */
+/* [第1层轨道 (21mm) / Cup layer1 (21mm)] */
 marble_level1_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_level1_rotate = 0; //90
 marble_level1_mirror = [0,0,0]; //[0:1]
@@ -50,7 +50,7 @@ marble_level1_position = [0,0]; //0.1
 marble_level1_profile = "auto"; //[auto, top, round, printable_round]
 marble_level1_highlight = false;
 
-/* [Cup Bottom] */
+/* [底部轨道 / Cup Bottom] */
 marble_bottom_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_bottom_rotate = 0; //90
 marble_bottom_mirror = [0,0,0]; //[0:1]

@@ -12,291 +12,292 @@ use <modules/module_gridfinity_cup.scad>
 use <modules/module_gridfinity_block.scad>
 
 /*<!!start gridfinity_basic_cup!!>*/
-/* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [通用杯体 / General Cup] */
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 width = [2, 0]; //0.1
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [1, 0]; //0.1
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴 / Z dimension excluding. grid units (multiples of 7mm) or mm.
 height = [3, 0]; //0.1
-// Fill in solid block (overrides all following options)
+// 填充实心块 / Fill in solid block (overrides all following options)
 filled_in = "disabled"; //[disabled, enabled, enabledfilllip:"Fill cup and lip"]
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁壁厚 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
-//under size the bin top by this amount to allow for better stacking
+// 顶部预留间隙，缩小顶部尺寸以便更好堆叠 / under size the bin top by this amount to allow for better stacking
 headroom = 0.8; // 0.1
 
-/* [Cup Lip] */
-// Style of the cup lip
+/* [卡口 / Cup Lip] */
+// 卡口样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, reduced_double, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 低于此尺寸时缩减卡口内侧以便取物 / Below this the inside of the lip will be reduced for easier access.
 lip_side_relief_trigger = [1,1]; //0.1
-// Create a relief in the lip
+// 卡口顶部凹槽高度 / Create a relief in the lip
 lip_top_relief_height = -1; // 0.1
-// how much of the lip to retain on each end
+// 每端保留的卡口宽度 / how much of the lip to retain on each end
 lip_top_relief_width = -1; // 0.1
-// add a notch to the lip to prevent sliding.
+// 在卡口添加防滑缺口 / add a notch to the lip to prevent sliding.
 lip_top_notches  = true;
-// enable lip clip for connection cups
+// 启用卡口夹扣（用于连接杯体）/ enable lip clip for connection cups
 lip_clip_position = "disabled"; //[disabled, intersection, center_wall, both]
-//allow stacking when bin is not multiples of 42
+// 非42整数倍时仍允许堆叠 / allow stacking when bin is not multiples of 42
 lip_non_blocking = false;
 height_includes_lip = false;
 
-/* [Subdivisions] */
-// Wall thickness [bottom, top]
+/* [分隔 / Subdivisions] */
+// 隔墙壁厚 [底部, 顶部] / Wall thickness [bottom, top]
 chamber_wall_thickness = [1.2, 1.2]; //0.1
-//Reduce the wall height by this amount
+// 隔墙高度缩减量 / Reduce the wall height by this amount
 chamber_wall_headroom = 0;//0.1
-// Radius of the top of the chamber wall, -ve is ratio of top wall thickenss. (disabled for bent walls)
+// 隔墙顶部圆角半径，负值为顶部壁厚的比率（弯折隔墙不生效）/ Radius of the top of the chamber wall, -ve is ratio of top wall thickenss. (disabled for bent walls)
 chamber_wall_top_radius = 0; //0.1
-//Reduce the wall height by this amount
+// 竖向隔室数量 / Vertical chambers count
 vertical_chambers = 1;
 vertical_separator_bend_separation = 0;
 vertical_separator_bend_angle = 45;
 vertical_separator_bend_position = 0;
 vertical_separator_cut_depth=0;
+// 横向隔室数量 / Horizontal chambers count
 horizontal_chambers = 1;
 horizontal_separator_bend_separation = 0;
 horizontal_separator_bend_angle = 45;
 horizontal_separator_bend_position = 0;
 horizontal_separator_cut_depth=0;
-// Enable irregular subdivisions
+// 启用不规则竖向分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（以网格单位从左端计算）/ Separator positions are defined in terms of grid units from the left end
 vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则横向分隔 / Enable irregular subdivisions
 horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（以网格单位从左端计算）/ Separator positions are defined in terms of grid units from the left end
 horizontal_separator_config = "10.5|21|42|50|60";
 
-/* [Base] */
-// Enable magnets
+/* [底部 / Base] */
+// 启用磁铁 / Enable magnets
 enable_magnets = false;
-// Enable screws
+// 启用螺钉 / Enable screws
 enable_screws = false;
-//size of magnet, diameter and height. Zack's original used 6.5 and 2.4
+// 磁铁尺寸，直径和高度。Zack原版使用6.5和2.4 / size of magnet, diameter and height. Zack's original used 6.5 and 2.4
 magnet_size = [6.5, 2.4];  // .1
-//create relief for magnet removal
+// 磁铁取出辅助槽 / create relief for magnet removal
 magnet_easy_release = "auto";//["off","auto","inner","outer"]
-// Use with captive magnet for a 'refinded style' magnet
+// 侧面磁铁入口（配合内嵌磁铁使用）/ Use with captive magnet for a 'refinded style' magnet
 magnet_side_access = "disabled";//[disabled,left:"↰ left",right:"⬑ right"]
-// raise the magnet void inside the part for print-in-magnets
+// 磁铁孔内抬高量（用于打印嵌入磁铁）/ raise the magnet void inside the part for print-in-magnets
 magnet_captive_height = 0; // .1
-// add a wavy pattern to the magnet hole
+// 磁铁孔波纹深度 / add a wavy pattern to the magnet hole
 magnet_crush_depth = 0; //0.1
-// add a chamfer to the magent hole
+// 磁铁孔倒角 / add a chamfer to the magent hole
 magnet_chamfer = 0; //0.1
-//size of screw, diameter and height. Zack's original used 3 and 6
+// 螺钉尺寸，直径和深度。Zack原版使用3和6 / size of screw, diameter and height. Zack's original used 3 and 6
 screw_size = [3, 6]; // .1
-//size of center magnet, diameter and height.
+// 中心磁铁尺寸，直径和高度 / size of center magnet, diameter and height.
 center_magnet_size = [0,0];
-// Sequential Bridging hole overhang remedy is active only when both screws and magnets are nonzero (and this option is selected)
+// 悬空修复（螺钉和磁铁均非零时启用）/ Sequential Bridging hole overhang remedy is active only when both screws and magnets are nonzero (and this option is selected)
 hole_overhang_remedy = 2;
-//Only add attachments (magnets and screw) to box corners (prints faster).
+// 仅在角部添加磁铁和螺钉（加速打印）/ Only add attachments (magnets and screw) to box corners (prints faster).
 box_corner_attachments_only = "enabled"; //["disabled","enabled","aligned"]
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+// 底部最小壁厚（Zack原版约1.2mm）/ Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 0.7;
 cavity_floor_radius = -1;// .1
-// Efficient floor option saves material and time, but the internal floor is not flat
+// 高效底板（节省材料但底面不平整）/ Efficient floor option saves material and time, but the internal floor is not flat
 efficient_floor = "off";//[off,on,rounded,smooth]
-// AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
+// 半节距，允许底部垫块以半格偏移 / AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
 sub_pitch = 1; //[1:"disabled",2:"half pitch",3:"third pitch",4:"quarter pitch"]
-// Removes the internal grid from base the shape
+// 平底模式 / Removes the internal grid from base the shape
 flat_base = "off"; // [off, gridfinity:gridfinity stackable, rounded]
-// Remove floor to create a vertical spacer
+// 移除底板创建竖向垫片 / Remove floor to create a vertical spacer
 spacer = false;
-//Pads smaller than this will not be rendered as it interferes with the baseplate. Ensure appropriate support is added in slicer.
+// 小于此尺寸的垫块不渲染（会影响与底板配合）/ Pads smaller than this will not be rendered as it interferes with the baseplate. Ensure appropriate support is added in slicer.
 minimum_printable_pad_size = 0.2;
 
-// Adjust the radius of the rounded flat base. -1 uses the corner radius.
+// 圆角平底半径，-1使用角部半径 / Adjust the radius of the rounded flat base. -1 uses the corner radius.
 flat_base_rounded_radius = -1;
-// Add chamfer to the rounded bottom corner to make easier to print. -1 add auto 45deg.
+// 圆角底部倒角（便于打印），-1自动添加45度 / Add chamfer to the rounded bottom corner to make easier to print. -1 add auto 45deg.
 flat_base_rounded_easyPrint = -1;
-// grid position x
+// 网格X轴对齐方式 / grid position x
 align_grid_x = "near";//[near, far]
-// grid position y
+// 网格Y轴对齐方式 / grid position y
 align_grid_y = "near";//[near, far]
 
-/* [Label] */
+/* [标签 / Label] */
 label_style = "disabled"; //[disabled: no label, normal:normal, gflabel:gflabel basic label, pred:pred - labels by pred, cullenect:Cullenect click labels V2,  cullenect_legacy:Cullenect click labels v1]
-// Include overhang for labeling (and specify left/right/center justification)
+// 标签位置（含左/右/居中对齐）/ Include overhang for labeling (and specify left/right/center justification)
 label_position = "left"; // [left, right, center, leftchamber, rightchamber, centerchamber]
-// Width, Depth, Height, Radius. Width in Gridfinity units of 42mm, Depth and Height in mm, radius in mm. Width of 0 uses full width. Height of 0 uses Depth, height of -1 uses depth*3/4.
-// Enable labels on internal divider walls
+// 标签尺寸：宽、深、高、圆角半径。宽度为Gridfinity单位(42mm)，深度和高度为mm，半径为mm。宽度0=全宽，高度0=深度值，高度-1=深度*3/4 / Width, Depth, Height, Radius.
+// 在内部隔墙上启用标签 / Enable labels on internal divider walls
 label_dividers = "disabled"; //[disabled, horizontal, vertical, both]
 
 label_size = [0,14,0,0.6]; // 0.01
-// Size in mm of relief where appropriate. Width, depth, height, radius
+// 凹陷标签尺寸（宽、深、高、圆角半径），单位mm / Size in mm of relief where appropriate. Width, depth, height, radius
 label_relief = [0,0,0,0.6]; // 0.1
-// wall to enable on, front, back, left, right. 0: disabled; 1: enabled;
+// 启用标签的墙面（前、后、左、右），0禁用，1启用 / wall to enable on, front, back, left, right. 0: disabled; 1: enabled;
 label_walls=[0,1,0,0];  //[0:1:1]
 
 
-/* [Sliding Lid] */
+/* [滑盖 / Sliding Lid] */
 sliding_lid_enabled = false;
-// 0 = wall thickness *2
+// 滑盖厚度，0=壁厚×2 / 0 = wall thickness *2
 sliding_lid_thickness = 0; //0.1
-// 0 = wall_thickness/2
+// 最小壁厚，0=壁厚/2 / 0 = wall_thickness/2
 sliding_lid_min_wall_thickness = 0;//0.1
-// 0 = default_sliding_lid_thickness/2
+// 最小支撑，0=默认滑盖厚度/2 / 0 = default_sliding_lid_thickness/2
 sliding_lid_min_support = 0;//0.1
 sliding_lid_clearance = 0.1;//0.1
 sliding_lid_pull_style = "disabled"; //[disabled, lip, finger]
 sliding_lid_nub_size = 0.5; //
 
-/* [Finger Slide] */
-// Include larger corner fillet
+/* [取物槽 / Finger Slide] */
+// 添加较大的角部圆角以便取物 / Include larger corner fillet
 fingerslide = "none"; //[none, rounded, chamfered]
-// Radius of the corner fillet, 0:none, >1: radius in mm, <0 dimention/abs(n) (i.e. -3 is 1/3 the width)
+// 角部圆角半径，0无，>1为mm值，<0为尺寸/abs(n) / Radius of the corner fillet, 0:none, >1: radius in mm, <0 dimention/abs(n) (i.e. -3 is 1/3 the width)
 fingerslide_radius = -3;
-// wall to enable on, front, back, left, right. 0: disabled; 1: enabled using radius; >1: override radius.
+// 启用取物槽的墙面（前、后、左、右），0禁用，1用半径，>1覆盖半径 / wall to enable on, front, back, left, right. 0: disabled; 1: enabled using radius; >1: override radius.
 fingerslide_walls=[1,0,0,0];
-//Align the fingerslide with the lip
+// 取物槽与卡口对齐 / Align the fingerslide with the lip
 fingerslide_lip_aligned=true;
 
-/* [Tapered Corner] */
+/* [锥形角 / Tapered Corner] */
 tapered_corner = "none"; //[none, rounded, chamfered]
 tapered_corner_size = 10;
-// Set back of the tapered corner, default is the gridfinity corner radius
+// 锥形角退缩量，默认使用Gridfinity角半径 / Set back of the tapered corner, default is the gridfinity corner radius
 tapered_setback = -1;//gridfinity_corner_radius/2;
 
-/* [Wall Pattern] */
-// Grid wall patter
+/* [墙壁纹样 / Wall Pattern] */
+// 启用墙壁网格纹样 / Grid wall patter
 wallpattern_enabled=false;
-// Style of the pattern
+// 纹样样式 / Style of the pattern
 wallpattern_style = "hexgrid"; //[hexgrid, grid, voronoi, voronoigrid, voronoihexgrid, brick, brickoffset]
-// Spacing between pattern
+// 纹样间距 / Spacing between pattern
 wallpattern_strength = 2; //0.1
-// wall to enable on, front, back, left, right.
+// 启用纹样的墙面（前、后、左、右）/ wall to enable on, front, back, left, right.
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
-// rotate the grid
+// 旋转网格 / rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 在隔墙上添加纹样 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
-//Number of sides of the hole op
+// 孔洞边数 / Number of sides of the hole op
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
-//Radius of corners
+// 孔洞角部圆角半径 / Radius of corners
 wallpattern_hole_radius = 0.5;
-// pattern fill mode
+// 纹样填充模式 / pattern fill mode
 wallpattern_fill = "none"; //[none, space, crop, crophorizontal, cropvertical, crophorizontal_spacevertical, cropvertical_spacehorizontal, spacevertical, spacehorizontal]
-// border around the wall pattern, default is wall thickness
+// 纹样边框宽度，默认为壁厚 / border around the wall pattern, default is wall thickness
 wallpattern_border = 0;
-// depth of imprint in mm, 0 = is wall width.
+// 压印深度（mm），0=整墙厚度 / depth of imprint in mm, 0 = is wall width.
 wallpattern_depth = 0; // 0.1
-//grid pattern hole taper
+// 网格孔锥形倒角 / grid pattern hole taper
 wallpattern_pattern_grid_chamfer = 0; //0.1
-//voronoi pattern noise,
+// Voronoi纹样噪声 / voronoi pattern noise,
 wallpattern_pattern_voronoi_noise = 0.75; //0.01
-//brick pattern center weight
+// 砖块纹样中心权重 / brick pattern center weight
 wallpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 底板纹样最小面尺寸（$fs）/ $fs for floor pattern, min size face.
 wallpattern_pattern_quality = 0.4;//0.1:0.1:2
 wallpattern_colored = "disabled"; //[disabled, enabled]
 
 
-/* [Floor Pattern] */
-// enable Grid floor patter
+/* [底板纹样 / Floor Pattern] */
+// 启用底板网格纹样 / enable Grid floor patter
 floorpattern_enabled=false;
-// Style of the pattern
+// 纹样样式 / Style of the pattern
 floorpattern_style = "hexgrid"; //[hexgrid, grid, voronoi, voronoigrid, voronoihexgrid, brick, brickoffset]
-// Spacing between pattern
+// 纹样间距 / Spacing between pattern
 floorpattern_strength = 2; //0.1
-// rotate the grid
+// 旋转网格 / rotate the grid
 floorpattern_rotate_grid = false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 floorpattern_cell_size = [10,10]; //0.1
-//Number of sides of the hole op
+// 孔洞边数 / Number of sides of the hole op
 floorpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
-//Radius of corners
+// 孔洞角部圆角半径 / Radius of corners
 floorpattern_hole_radius = 0.5;
-// pattern fill mode
+// 纹样填充模式 / pattern fill mode
 floorpattern_fill = "crop"; //[none, space, crop, crophorizontal, cropvertical, crophorizontal_spacevertical, cropvertical_spacehorizontal, spacevertical, spacehorizontal]
-// border around the wall pattern, default is wall thickness
+// 纹样边框宽度，默认为壁厚 / border around the wall pattern, default is wall thickness
 floorpattern_border = 0;
-// depth of imprint in mm, 0 = is wall width.
+// 压印深度（mm），0=整墙厚度 / depth of imprint in mm, 0 = is wall width.
 floorpattern_depth = 0; // 0.1
-//grid pattern hole taper
+// 网格孔锥形倒角 / grid pattern hole taper
 floorpattern_pattern_grid_chamfer = 0; //0.1
-//voronoi pattern noise,
+// Voronoi纹样噪声 / voronoi pattern noise,
 floorpattern_pattern_voronoi_noise = 0.75; //0.01
-//brick pattern center weight
+// 砖块纹样中心权重 / brick pattern center weight
 floorpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 底板纹样最小面尺寸（$fs）/ $fs for floor pattern, min size face.
 floorpattern_pattern_quality = 0.4;//0.1:0.1:2
 
-/* [Wall Cutout] */
+/* [墙壁镂空 / Wall Cutout] */
 wallcutout_vertical ="disabled"; //[disabled, enabled, inneronly, wallsonly, frontonly, backonly]
-// wallcoutout position -0.5: disabled; Positive: GF units; Negative: ratio length/abs(value)
+// 竖向镂空位置，-0.5禁用；正值为GF单位；负值为长度/abs(值)的比率 / wallcoutout position -0.5: disabled; Positive: GF units; Negative: ratio length/abs(value)
 wallcutout_vertical_position=[-2,-0.5,-0.5,-0.5];  //0.01
-//default will be binwidth/2
+// 默认为仓宽/2 / default will be binwidth/2
 wallcutout_vertical_width=0;
 wallcutout_vertical_angle=70;
-//default will be binHeight. 0: radius, -1 floor, Positive: depth from top; Negative: ratio height/abs(value)
+// 默认为仓高。0=圆弧，-1=底板，正值=从顶部的深度，负值=高度/abs(值)的比率 / default will be binHeight. 0: radius, -1 floor, Positive: depth from top; Negative: ratio height/abs(value)
 wallcutout_vertical_height=0; //0.1
 wallcutout_vertical_corner_radius=5;
 wallcutout_horizontal ="disabled"; //[disabled, enabled, inneronly, wallsonly, leftonly, rightonly]
-// wallcoutout position -0.5: disabled; Positive: GF units; Negative: ratio length/abs(value)
+// 横向镂空位置，-0.5禁用；正值为GF单位；负值为长度/abs(值)的比率 / wallcoutout position -0.5: disabled; Positive: GF units; Negative: ratio length/abs(value)
 wallcutout_horizontal_position=[-2,-0.5,-0.5,-0.5];  //0.01
-//default will be binwidth/2
+// 默认为仓宽/2 / default will be binwidth/2
 wallcutout_horizontal_width=0;
 wallcutout_horizontal_angle=70;
-//default will be binHeight
+// 默认为仓高 / default will be binHeight
 wallcutout_horizontal_height=0; //0.1
 wallcutout_horizontal_corner_radius=5;
 
-/* [Extendable] */
+/* [可扩展 / Extendable] */
 extension_x_enabled = "disabled"; //[disabled, front, back]
 extension_x_position = 0.5;
 extension_y_enabled = "disabled"; //[disabled, front, back]
 extension_y_position = 0.5;
 extension_tabs_enabled = true;
-//Tab size, height, width, thickness, style. width default is height, thickness default is 1.4, style {0,1,2}.
+// 扣片尺寸：高、宽、厚、样式。宽默认=高，厚默认=1.4，样式{0,1,2} / Tab size, height, width, thickness, style. width default is height, thickness default is 1.4, style {0,1,2}.
 extension_tab_size= [10,0,0,0];
 
-/* [Bottom Text] */
-// Add bin size to bin bottom
+/* [底部文字 / Bottom Text] */
+// 在底部添加仓体尺寸 / Add bin size to bin bottom
 text_1 = false;
-// Font Size of text, in mm (0 will auto size)
+// 文字字号（mm），0自动 / Font Size of text, in mm (0 will auto size)
 text_size = 0; // 0.1
-// Depth of text, in mm
+// 文字深度（mm）/ Depth of text, in mm
 text_depth = 0.3; // 0.01
-// Offset of text , in mm
+// 文字偏移（mm）/ Offset of text , in mm
 text_offset = [0, 0]; // 0.1
-// Font to use
+// 字体 / Font to use
 text_font = "Aldo";  // [Aldo, B612, "Open Sans", Ubuntu]
-// Add free-form text line to bin bottom (printing date, serial, etc)
+// 在底部添加自定义文字（如日期、编号等）/ Add free-form text line to bin bottom (printing date, serial, etc)
 text_2 = false;
-// Actual text to add
+// 自定义文字内容 / Actual text to add
 text_2_text = "Gridfinity Extended";
 
-/* [debug] */
-// Debug slice
+/* [调试 / debug] */
+// 调试切片 / Debug slice
 cut = [0,0,0]; //0.1
 
-// Enable loging of help messages during render.
+// 启用渲染时的帮助信息 / Enable loging of help messages during render.
 enable_help = "disabled"; //[info,debug,trace]
 
-/* [Model detail] */
-// Work in progress,  Modify the default grid size. Will break compatibility
+/* [模型细节 / Model detail] */
+// 修改默认网格尺寸（将破坏兼容性）/ Work in progress,  Modify the default grid size. Will break compatibility
 pitch = [42,42,7];  //[0:1:9999]
-// clearance around the bin, will reduce the bin by this amount in mm.
+// 仓体周围间隙（mm）/ clearance around the bin, will reduce the bin by this amount in mm.
 clearance = [0.5, 0.5, 0];
-// Assign colours to the bin
+// 仓体配色 / Assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
-// Where to render the model
+// 模型渲染位置 / Where to render the model
 render_position = "center"; //[default,center,zero]
-// Minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 最小片段角度（值越小片段越多）/ Minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小片段尺寸（值越小片段越多）/ minimum size of a fragment.  Low is more fragments
 fs = 0.4;
-// number of fragments, overrides $fa and $fs
+// 片段数量（覆盖$fa和$fs）/ number of fragments, overrides $fa and $fs
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
-// force render on costly components
+// 强制渲染耗时组件 / force render on costly components
 force_render = true;
 
 /* [Hidden] */

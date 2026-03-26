@@ -6,71 +6,71 @@ use <modules/module_gridfinity_cup.scad>
 use <modules/module_gridfinity_block.scad>
 
 /*<!!start gridfinity_itemholder!!>*/
-/* [Item Holder] */
+/* [物品收纳 / Item Holder] */
 itemholder_known_tools = "1/4hexshank"; // [ "custom":Custom, "4hexshank":4mm Hex Shank, "1/4hexshank":1/4 Hex Shank, "1/4hexshanklong":1/4 Hex Long Shank, "5/16hexshank":5/16 Hex Shank, "3/8hexshank":3/8 Hex Shank, "1/2shank":1/2 inch router bit, "12shank":12mm router bit, "10shank":10mm router bit, "3/8shank":3/8 inch router bit, "8shank":8mm router bit, "1/4shank":1/4 inch router bit, "6shank":6mm router bit, "1/8shank":1/8 inch Dremel router bit]
 itemholder_known_batteries = "custom"; // [ "custom":Custom, "aaaa":AAAA cell, "aaa":AAA cell, "aa":AA cell, "9v":9v, "c":C cell, "d":d cell, "7540cell":7540 cell, "8570cell":8570 cell, "10180cell":10180 cell, "10280cell":10280 cell, "10440cell":10440 cell, "10850cell":10850 cell, "13400cell":13400 cell, "14250cell":14250 cell, "14300cell":14300 cell, "14430cell":14430 cell, "14500cell":14500 cell, "14650cell":14650 cell, "15270cell":15270 cell, "16340cell":16340 cell, "16650cell":16650 cell, "17500cell":17500 cell, "17650cell":17650 cell, "17670cell":17670 cell, "18350cell":18350 cell, "18490cell":18490 cell, "18500cell":18500 cell, "18650cell":18650 cell, "20700cell":20700 cell, "21700cell":21700 cell, "25500cell":25500 cell, "26500cell":26500 cell, "26650cell":26650 cell, "26700cell":26700 cell, "26800cell":26800 cell, "32600cell":32600 cell, "32650cell":32650 cell, "32700cell":32700 cell, "38120cell":38120 cell, "38140cell":38140 cell, "40152cell":40152 cell, "4680cell":4680 cell]
 itemholder_known_cell_batteries = "custom"; // [ "custom":Custom, "cr927":CR927 cell, "cr1025":CR1025 cell, "cr1130":CR1130 cell, "cr1216":CR1216 cell, "cr1220":CR1220 cell, "cr1225":CR1225 cell, "cr1616":CR1616 cell, "cr1620":CR1620 cell, "cr1632":CR1632 cell, "cr2012":CR2012 cell, "cr2016":CR2016 cell, "cr2020":CR2020 cell, "cr2025":CR2025 cell, "cr2032":CR2032 cell, "cr2040":CR2040 cell, "cr2050":CR2050 cell, "cr2320":CR2320 cell, "cr2325":CR2325 cell, "cr2330":CR2330 cell, "br2335":BR2335 cell, "cr2354":CR2354 cell, "cr2412":CR2412 cell, "cr2430":CR2430 cell, "cr2450":CR2450 cell, "cr2477":CR2477 cell, "cr3032":CR3032 cell, "cr11108":CR11108 cell]
 itemholder_known_cards = "custom"; // [ "custom":Custom, "multicard":Multi card slot, "compactflashi":CompactFlash. Type I, "compactflashii":CompactFlash. Type II, "smartmedia":SmartMedia, "mmc":MMC. MMCplus, "mmcmobile":RS-MMC. MMCmobile, "mmcmicro":MMCmicro, "sd":SD. SDHC. SDXC. SDIO. MicroP2, "minisd":miniSD. miniSDHC. miniSDIO, "microsd":microSD. microSDHC. microSDXC, "memorystickstandard":Memory Stick Standard. PRO, "memorystickduo":Memory Stick Duo. PRO Duo. PRO-HG. XC, "memorystickmicro":Memory Stick Micro (M2). XC, "nano":Nano Memory, "psvita":PS Vita Memory Card, "xqd":XQD card, "xD":xD, "usba":USB A, "usbc":USB C]
 itemholder_known_cartridges = "custom"; // [ "custom":Custom, "atari800":Atari 800, "atari2600":Atari 2600/7800/Colecovision, "atari5200":Atari 5200, "atari7800":Atari 7800, "commodore":Commodore Vic20, "magnavoxodyssey":Magnavox Odyssey, "magnavoxodysseymulticard":Magnavox Odyssey (multicard), "magnavoxodyssey2":Magnavox Odyssey2, "mattelintellivision":Mattel Intellivision I & II, "nintendofamicom":Nintendo Famicom, "nintendofamicomdisk":Nintendo Famicom Disk, "nintendosuperfamicom":Nintendo Super Famicom / SNES (Pal), "nes":NES, "snes":SNES, "nintendo64":Nintendo 64, "nintendogb":Nintendo GB, "nintendogbc":Nintendo GBC, "nintendogba":Nintendo GBA, "nintendods":Nintendo DS, "nintendo2ds":Nintendo 2DS/3DS, "nintendovb":Nintendo Virtual Boy, "nintendoswitch":Nintendo Switch, "segagamegear":Sega Game Gear, "segagenesis":Sega Genesis, "segagenesistall":Sega Genesis (tall cart), "segamegadrive":Sega MegaDrive, "segamegadrivecodemasters":Sega MegaDrive Codemasters, "segamastersystem":Sega Master System, "sega32x":Sega 32x, "segacard":Sega Card/TG16, "segapico":Sega Pico, "sonyumd":Sony UMD, "sonypsvita":Sony PS Vita, "sonypsvitamemcard":Sony PS Vita (Mem Card), "necpcehucard":NEC PCE HuCard, "snkneogeoaes":SNK Neo Geo AES, "snkneogeomvs":SNK Neo Geo MVS, "bandai":Bandai Wonderswan/Color, "msx":MSX]
-// Enlarge the holes by this amount for clearance
+// 孔洞配合间隙扩大量 / Enlarge the holes by this amount for clearance
 itemholder_hole_clearance = 0.25;
-// Depth of hole, Overrides the known item depth. Limited by floor height.
+// 孔洞深度（覆盖预设物品深度，受底板高度限制）/ Depth of hole, Overrides the known item depth. Limited by floor height.
 itemholder_hole_depth = 0; //0.1
-// 45 deg chamfer added to the top of the hole (mm)
+// 孔洞顶部45度倒角（mm）/ 45 deg chamfer added to the top of the hole (mm)
 itemholder_hole_chamfer = 1; //0.5
 
-/* [Item Holder - Sample Item] */
-//Render just a sample of the item hole, to be used as a test print
+/* [物品收纳 - 样品 / Item Holder - Sample Item] */
+// 仅渲染孔洞样品（用于测试打印）/ Render just a sample of the item hole, to be used as a test print
 itemholder_enable_sample = false;
-//Wall thickness of the sample print
+// 样品壁厚 / Wall thickness of the sample print
 itemholder_sample_wall_thickness = 3;
 
-/* [Item Holder - Multi Card] */
-// cards to use when multi card is selected I.E. sd;USBA;microsd
+/* [物品收纳 - 多卡 / Item Holder - Multi Card] */
+// 多卡模式下使用的卡片类型，例如：sd;USBA;microsd / cards to use when multi card is selected I.E. sd;USBA;microsd
 itemholder_multi_cards = "sd,usba,microsd";
-// Force nesting of multi cards, This has an issue where the last item could be cropped.
+// 强制多卡嵌套（最后一项可能被裁剪）/ Force nesting of multi cards, This has an issue where the last item could be cropped.
 itemholder_multi_card_compact = 0.7; // [0:0.1:1]
 
-/* [Item Holder - Custom Item] */
-// Should the grid be square or hex
+/* [物品收纳 - 自定义物品 / Item Holder - Custom Item] */
+// 孔洞底部形状 / Should the grid be square or hex
 itemholder_hole_base_shape = "round"; //["round","square","halfround","multicard","custom":custom shape - beta feature]
-// The number of sides for a round hole
+// 圆孔的边数 / The number of sides for a round hole
 itemholder_hole_sides = 4;
-// Diameter of, round hole, or corners for square hole
+// 圆孔直径或方孔角部直径 / Diameter of, round hole, or corners for square hole
 itemholder_hole_diameter = 5; //0.1
-// Radius of the bottom of the custom shape
+// 自定义形状底部圆角半径 / Radius of the bottom of the custom shape
 itemholder_hole_bottom_radius = 0;
-// The size the hole
+// 孔洞尺寸 / The size the hole
 itemholder_hole_size = [20, 25]; //0.1
 itemholder_hole_rotation = 0;
 
-/* [Item Holder - Item Layout] */
-// Should the grid be square or hex
+/* [物品收纳 - 布局 / Item Holder - Item Layout] */
+// 孔洞排列方式（方形或六边形）/ Should the grid be square or hex
 itemholder_grid_style = "auto"; //["square","hex","auto"]
-//Spacing around the holes
+// 孔洞间距 / Spacing around the holes
 itemholder_hole_spacing = 2; //0.1
-// Number of holes in the x and y dimension, 0 is dynamic
+// X方向孔洞数量，0为自动 / Number of holes in the x and y dimension, 0 is dynamic
 itemholder_hole_gridx = 0; //1
-// Number of holes in the y dimension, 0 is dynamic, y.5, is only valid for hex.
+// Y方向孔洞数量，0为自动，y.5仅对六边形有效 / Number of holes in the y dimension, 0 is dynamic, y.5, is only valid for hex.
 itemholder_hole_gridy = 0; //0.5
-//Auto set the bin height based on the hole size.
+// 根据孔洞尺寸自动设置仓高 / Auto set the bin height based on the hole size.
 itemholder_auto_bin_height = "enabled"; //["enabled","enabled_full","disabled"]
-// The number of sides for a round hole
+// 隔室数量 / The number of sides for a round hole
 itemholder_compartments = [1,1]; //[1:10]
-// Spacing around the compartments
+// 隔室间距 / Spacing around the compartments
 itemholder_compartment_spacing = 3; //0.1
-// Center the holes within the compartments
+// 孔洞在隔室内居中 / Center the holes within the compartments
 itemholder_compartment_centered = true;
 itemholder_compartment_fill = "none"; //["none", "space", "crop"]
 
 /*
 xpos,ypos,xsize,ysize,radius,depth.
-dimensions of the tray cutout, a string with comma separated values, and pipe (|) separated trays.
- - xpos, ypos, the x/y position in gridfinity units.
- - xsize, ysize. the x/y size in gridfinity units.
- - radius, [optional] corner radius in mm.
- - depth, [optional] depth in mm
- - example "0,0,2,1|2,0,2,1,2,5"
+自定义隔室配置字符串，以逗号分隔，以竖线(|)分隔多个隔室。
+ - xpos, ypos: 位置（Gridfinity单位）
+ - xsize, ysize: 尺寸（Gridfinity单位）
+ - radius [可选]: 角部圆角（mm）
+ - depth [可选]: 深度（mm）
+ - 示例 "0,0,2,1|2,0,2,1,2,5"
 */
 //[[xpos, ypos, xsize, ysize, radius, depth]].  xpos, ypos: the x/y position in gridfinity units.  xsize, ysize: the x/y size in gridfinity units.  radius [optional]: corner radius in mm.  depth [optional]: depth in mm.  Example "0,0,2,1|2,0,2,1,2,5"
 itemholder_customcompartments = "";

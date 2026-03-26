@@ -12,21 +12,21 @@ use <modules/module_gridfinity_cup.scad>
 use <modules/module_gridfinity_block.scad>
 
 /*<!!start gridfinity_basic_cup!!>*/
-/* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [通用杯体 / General Cup] */
+// Stanley型号选择 / Stanley model selection
 stanley_model = "proshallow"; //[proshallow:Pro Shallow,prodeep:Pro Deep,fatmaxshallow:FatMax Pro 1-97-519,fatmaxdeep:FatMax Pro Deep 1-97-521,compartment25:25-Compartment 1-92-762,compartment25front:25-Compartment Front 1-92-762]
 
-// X dimension. grid units (multiples of 42mm) or mm.
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 width = [1, 0]; //0.1
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [1, 0]; //0.1
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴 / Z dimension excluding. grid units (multiples of 7mm) or mm.
 height = [1, 0]; //0.1
-// Fill in solid block (overrides all following options)
+// 填充实心块 / Fill in solid block (overrides all following options)
 filled_in = "disabled"; //[disabled, enabled, enabledfilllip:"Fill cup and lip"]
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁壁厚 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 1.2;  // .01
-//under size the bin top by this amount to allow for better stacking
+// 顶部预留间隙，缩小顶部尺寸以便更好堆叠 / under size the bin top by this amount to allow for better stacking
 headroom = 0.8; // 0.1
 
 /* [Cup Lip] */

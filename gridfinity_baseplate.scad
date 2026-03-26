@@ -4,59 +4,58 @@ use <modules/module_gridfinity_block.scad>
 use <modules/module_gridfinity_baseplate.scad>
 use <modules/module_gridfinity_frame_connectors.scad>
 
-// Plate Style
+// 底板样式 / Plate Style
 Base_Plate_Options = "default";//[default:Efficient base, cnclaser:CNC or Laser cut]
-// X dimension. grid units (multiples of 42mm) or mm.
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 Width = [3, 0]; //0.1
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 Depth = [2, 0]; //0.1
 oversize_method = "fill"; //[crop, fill]
 position_fill_grid_x = "near";//[near:"← left", center:"↔ center", far:"→ right"]
 position_fill_grid_y = "near";//[far:"↑ up", center:"↕ center", near:"↓ bottom"]
-// X outer dimension. grid units (multiples of 42mm) or mm.
+// X轴外边界 / X outer dimension. grid units (multiples of 42mm) or mm.
 outer_Width = [0, 0]; //0.1
-// Y outer dimension. grid units (multiples of 42mm) or mm.
+// Y轴外边界 / Y outer dimension. grid units (multiples of 42mm) or mm.
 outer_Depth = [0, 0]; //0.1
-// z outer dimension. mm.
+// Z轴外边界（mm）/ z outer dimension. mm.
 outer_Height = 0; //0.1
 position_grid_in_outer_x = "center";//[near:"← left", center:"↔ center", far:"→ right"]
 position_grid_in_outer_y = "center";//[far:"↑ up", center:"↕ center", near:"↓ bottom"]
-//Reduce the frame wall size to this value
+// 框架墙高度缩减 / Reduce the frame wall size to this value
 Reduced_Wall_Height = -1; //0.1
 Reduced_Wall_Taper = false;
 plate_corner_radius = 3.75; //0.01
-//Corner radius for the inner corners (Works well with build_plate_enabled)
+// 内角圆角半径（与打印机热床选项配合效果好）/ Corner radius for the inner corners (Works well with build_plate_enabled)
 secondary_corner_radius = 3.75; //0.01
 
-/* [Printer bed options] */
+/* [打印机热床选项 / Printer bed options] */
 build_plate_enabled = "disabled";//[disabled, enabled, unique]
-//spread out the plates, use if last row is small.
+// 分散底板，当最后一行较小时使用 / spread out the plates, use if last row is small.
 average_plate_sizes = false;
-//Will split the plate in to the
+// 底板分割尺寸 / Will split the plate in to the
 build_plate_size = [200,250];
 
-/* [Base Plate Options] */
-// Enable magnets in the bin corner
+/* [底板选项 / Base Plate Options] */
+// 启用仓角磁铁 / Enable magnets in the bin corner
 Enable_Magnets = false;
-//size of magnet, diameter and height. Zacks original used 6.5 and 2.4
+// 磁铁尺寸，直径和高度。Zack原版使用6.5和2.4 / size of magnet, diameter and height. Zacks original used 6.5 and 2.4
 Magnet_Size = [6.5, 2.4];  // .1
-//raises the magnet, and creates a floor (for gluing)
+// 磁铁Z轴偏移（抬高并创建底层，用于粘合）/ raises the magnet, and creates a floor (for gluing)
 Magnet_Z_Offset = 0;  // .1
-//raises the magnet, and creates a ceiling to capture the magnet
+// 磁铁顶盖（抬高并创建顶层以固定磁铁）/ raises the magnet, and creates a ceiling to capture the magnet
 Magnet_Top_Cover = 0;  // .1
-// [Magnet Release Options]
-// Method to help remove magnets: "none", "slot" (side pry), "hole" (poke from behind)
+// 磁铁释放方式 / Method to help remove magnets: "none", "slot" (side pry), "hole" (poke from behind)
 Magnet_Release_Method = "none"; //[none, slot, hole]
-//Enable screws in the bin corner under the magnets
+// 角部螺钉（磁铁下方）/ Enable screws in the bin corner under the magnets
 Corner_Screw_Enabled = false;
-//Enable hold down screw in the center
+// 中心固定螺钉 / Enable hold down screw in the center
 Center_Screw_Enabled = false;
-//Enable cavity to place frame weights
+// 配重腔 / Enable cavity to place frame weights
 Enable_Weight = false;
-//Removes the bottom taper
+// 移除底部锥度 / Removes the bottom taper
 Remove_Bottom_Taper = false;
 
-/* [Base Plate Clips]*/
+/* [底板连接扣 / Base Plate Clips]*/
 Connector_Only = false;
 Connector_Position = "center_wall"; //["center_wall","intersection","both"]
 
@@ -64,23 +63,23 @@ Connector_Clip_Enabled = false;
 Connector_Clip_Size = 10;
 Connector_Clip_Tolerance = 0.1;
 
-//This feature is not yet finalised, or working properly.
+// 此功能尚未完成。/ This feature is not yet finalised, or working properly.
 Connector_Butterfly_Enabled = false;
 Connector_Butterfly_Size = [5,4,1.5];
 Connector_Butterfly_Radius = 0.1;
 Connector_Butterfly_Tolerance = 0.1;
 
-//This feature is not yet finalised, or working properly.
+// 此功能尚未完成。/ This feature is not yet finalised, or working properly.
 Connector_Filament_Enabled = false;
 Connector_Filament_Diameter = 2;
 Connector_Filament_Length = 8;
 
-//This feature is not yet finalised, or working properly.
+// 此功能尚未完成。/ This feature is not yet finalised, or working properly.
 Connector_Snaps_Enabled = "disabled"; //["disabled","larger","smaller"]
 Connector_Snaps_Clearance = 0.2;
 
-/* [Custom Grid]*/
-//Enable custom grid, you will configure this in the (Lid not supported)
+/* [自定义网格 / Custom Grid]*/
+// 启用自定义网格（不支持盖板）/ Enable custom grid, you will configure this in the (Lid not supported)
 Custom_Grid_Enabled = false;
 
 //Custom gid sizes
@@ -97,21 +96,21 @@ xpos5 = [6,2,2,2,2,10,0];
 xpos6 = [0,0,0,0,0,0,0];
 xpos7 = [0,0,0,0,0,0,0];
 
-/* [Model detail] */
-//Work in progress,  Modify the default grid size. Will break compatibility
+/* [模型细节 / Model detail] */
+// 修改默认网格尺寸（将破坏兼容性）/ Work in progress,  Modify the default grid size. Will break compatibility
 pitch = [42,42,7];  //[0:1:9999]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 最小片段角度（值越小片段越多）/ minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小片段尺寸（值越小片段越多）/ minimum size of a fragment.  Low is more fragments
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 片段数量（覆盖$fa和$fs）/ number of fragments, overrides $fa and $fs
 fn = 0;
 
-/* [debug] */
+/* [调试 / debug] */
 Render_Position = "center"; //[default,center,zero]
-// Debug slice
+// 调试切片 / Debug slice
 cut = [0,0,0]; //0.1
-// enable loging of help messages during render.
+// 启用渲染时的帮助信息 / enable loging of help messages during render.
 enable_help = false;
 
 /* [Hidden] */

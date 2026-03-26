@@ -3,20 +3,20 @@ use <modules/module_gridfinity_cup.scad>
 use <modules/module_gridfinity_block.scad>
 
 /*<!!start gridfinity_sieve!!>*/
-/* [Sieve] */
-// Should the grid be square or hex
+/* [筛网 / Sieve] */
+// 网格样式（方形或六边形）/ Should the grid be square or hex
 sieve_grid_style = "hexgrid"; //[grid, hexgrid]
-// Spacing around the holes
+// 孔洞间距 / Spacing around the holes
 sieve_strength = 3; //0.1
-// rotate the grid
+// 旋转网格 / rotate the grid
 sieve_rotate_grid = false;
-// 45 deg chamfer added to the top of the hole (mm)
+// 孔洞顶部45度倒角（mm）/ 45 deg chamfer added to the top of the hole (mm)
 sieve_hole_chamfer = 0; //0.5
-// The number of sides for the hole, when custom is selected
+// 孔洞边数（自定义模式）/ The number of sides for the hole, when custom is selected
 sieve_hole_sides = 6;
-// The size the hole, when custom is selected
+// 孔洞尺寸（自定义模式）/ The size the hole, when custom is selected
 sieve_cell_size = [10, 10]; //0.1
-// Spacing around the compartments
+// 隔室间隙 / Spacing around the compartments
 sieve_compartment_clearance= 7; //0.1
 sieve_compartment_fill = "none"; //["none", "space", "crop"]
 /*<!!end gridfinity_sieve!!>*/

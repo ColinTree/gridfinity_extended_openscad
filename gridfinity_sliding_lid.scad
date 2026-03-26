@@ -12,39 +12,39 @@ include <modules/module_gridfinity_sliding_lid.scad>
 use <modules/module_gridfinity_cup.scad>
 use <modules/module_gridfinity_block.scad>
 
-/* [Sliding Lid] */
-// select what to render
+/* [滑盖 / Sliding Lid] */
+// 选择渲染内容 / select what to render
 render_choice = "both";//[both, lid, cup, both connected]
 sliding_lid_enabled = true;
-// 0 = wall thickness *2
+// 滑盖厚度，0=壁厚×2 / 0 = wall thickness *2
 sliding_lid_thickness = 0; //0.1
-// 0 = wall_thickness/2
+// 最小壁厚，0=壁厚/2 / 0 = wall_thickness/2
 sliding_lid_min_wallThickness = 0;//0.1
-// 0 = default_sliding_lid_thickness/2
+// 最小支撑，0=默认滑盖厚度/2 / 0 = default_sliding_lid_thickness/2
 sliding_lid_min_support = 0;//0.1
 sliding_lid_pull_style = "disabled"; //[disabled, lip, finger]
 sliding_lid_clearance = 0.1;//0.1
 sliding_lid_lip_clearance = 0.1;//0.1
 sliding_lid_nub_size = 0.5; //
 
-/* [Sliding Cutout] */
+/* [滑盖镂空 / Sliding Cutout] */
 sliding_lid_cutout_enabled = false; //
 sliding_lid_cutout_size = [-2,-2]; //0.1
 sliding_lid_cutout_radius = -4; //0.1
 sliding_lid_cutout_position = [0,0]; //0.1
 
-/* [Sliding Text] */
-// Add text to the sliding lid top
+/* [滑盖文字 / Sliding Text] */
+// 在滑盖顶部添加文字 / Add text to the sliding lid top
 sliding_lid_text_enabled = false;
-// Text to display on the lid
+// 滑盖显示文字 / Text to display on the lid
 sliding_lid_text = "Gridfinity";
-// Font size for the lid text (0 = auto-size)
+// 滑盖文字字号（0=自动）/ Font size for the lid text (0 = auto-size)
 sliding_lid_text_size = 0; // 0.1
-// Depth of text engraving in mm
+// 文字雕刻深度（mm）/ Depth of text engraving in mm
 sliding_lid_text_depth = 0.3; // 0.01
-// Font for the lid text
+// 滑盖文字字体 / Font for the lid text
 sliding_lid_text_font = "Aldo"; // [Aldo, B612, "Open Sans", Ubuntu]
-// Text position on lid (left, center, right)
+// 文字位置（左、中、右）/ Text position on lid (left, center, right)
 sliding_lid_text_position = "center"; // [left, center, right]
 
 /*<!!start gridfinity_basic_cup!!>*/
