@@ -61,56 +61,56 @@ marble_bottom_highlight = false;
 /*<!!end gridfinity_marble!!>*/
 
 /*<!!start gridfinity_basic_cup!!>*/
-/* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [通用设置 / General Cup] */
+// X轴 / X dimension.
 width = [2, 0]; //0.5
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension.
 depth = [1, 0]; //0.5
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴 / Z dimension
 height = [3, 0]; //3
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁厚度 / Wall thickness of outer walls.
 wall_thickness = 0;  // .01
-//under size the bin top by this amount to allow for better stacking
+//顶部余量（允许堆叠） / under size the bin top
 headroom = 0; // 0.1
 
-/* [Cup Lip] */
-// Style of the cup lip
+/* [唇边 / Cup Lip] */
+// 唇边样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 唇边内侧减料触发尺寸 / Below this the inside of the lip will be reduced
 lip_side_relief_trigger = [1,1]; //0.1
-// Create a relief in the lip
+// 唇边顶部缺口高度 / Create a relief in the lip
 lip_top_relief_height = 0; // 0.1
-// how much of the lip to retain on each end
+// 唇边两端保留比例 / how much of the lip to retain on each end
 lip_top_relief_width = 8.5; // 0.1
-// add a notch to the lip to prevent sliding.
+// 添加唇边防滑凸点 / add a notch to the lip to prevent sliding.
 lip_top_notches  = true;
-// enable lip clip for connection cups
+// 启用唇边卡扣连接 / enable lip clip for connection cups
 lip_clip_position = "disabled"; //[disabled, intersection]
 
-/* [Base] */
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+/* [底座 / Base] */
+// 底座开孔上方最小厚度 / Minimum thickness above cutouts in base
 floor_thickness = 1.5;
-// AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
+// 半间距（细分底部格）/ AKA half pitch.
 sub_pitch = 1; //[1:"disabled",2:"half pitch",3:"third pitch",4:"quarter pitch"]
 
-/* [debug] */
+/* [调试 / debug] */
 //Slice the bin
 cut = [0,0,0];
-// enable loging of help messages during render.
+// 渲染时输出帮助信息 / enable loging of help messages during render.
 enable_help = "disabled"; //[info,debug,trace]
 
-/* [Model detail] */
-//assign colours to the bin
+/* [模型细节 / Model detail] */
+//为收纳盒着色 / assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
-//where to render the model
+//模型渲染位置 / where to render the model
 render_position = "center"; //[default,center,zero]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 最小圆弧角度（越小越精细） / minimum angle for a fragment
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小面尺寸（越小越精细） / minimum size of a fragment.
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 圆弧段数（覆盖 $fa 和 $fs） / number of fragments, overrides $fa and $fs
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
 /*<!!end gridfinity_basic_cup!!>*/
 

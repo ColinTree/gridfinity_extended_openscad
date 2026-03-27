@@ -3,53 +3,53 @@ include <modules/gridfinity_constants.scad>
 use <modules/module_gridfinity_block.scad>
 use <modules/module_gridfinity_lid.scad>
 
-/* [Size] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [尺寸 / Size] */
+// X轴 / X dimension.
 width = [2, 0]; //0.1
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension.
 depth = [1, 0]; //0.1
 center_fill_grid_x = true;
 center_fill_grid_y = true;
 
-/* [Lid] */
-// Plate Style
+/* [盖子 / Lid] */
+// 底板样式 / Plate Style
 Lid_Options = "default";//[default, flat:Flat Removes the internal grid from base, halfpitch: halfpitch base, efficient]
 
-/* [Base Plate Options] */
-// Enable magnets in the bin corner
+/* [底板选项 / Base Plate Options] */
+// 启用磁铁（位于角落） / Enable magnets in the bin corner
 Enable_Magnets = true;
-//size of magnet, diameter and height. Zacks original used 6.5 and 2.4
+//磁铁尺寸（直径和高度） / size of magnet, diameter and height.
 Magnet_Size = [6.5, 2.4];  // .1
-//Reduce the frame wall size to this value
+//将框架壁高度减小到此值 / Reduce the frame wall size to this value
 Reduced_Wall_Height = -1; //0.1
 
-/* [Lid Options] */
+/* [盖子选项 / Lid Options] */
 Lid_Include_Magnets = true;
-// Base height, when the bin on top will sit, in GF units
+// 底座高度（收纳盒放置高度，GF单位） / Base height, when the bin on top will sit, in GF units
 Lid_Efficient_Base_Height = 0.4;// [0.4:0.1:1]
-// Thickness of the efficient floor
+// 高效底板厚度 / Thickness of the efficient floor
 Lid_Efficient_Floor_Thickness = 0.7;// [0.7:0.1:7]
 
-/* [debug] */
-//Slice along the x axis
+/* [调试 / debug] */
+//沿X轴切片（调试） / Slice along the x axis
 cutx = 0; //0.1
-//Slice along the y axis
+//沿Y轴切片（调试） / Slice along the y axis
 cuty = 0; //0.1
-// enable loging of help messages during render.
+// 渲染时输出帮助信息 / enable loging of help messages during render.
 enable_help = "disabled"; //[info,debug,trace]
 
-/* [Model detail] */
-//assign colours to the bin
+/* [模型细节 / Model detail] */
+//为收纳盒着色 / assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
-//where to render the model
+//模型渲染位置 / where to render the model
 render_position = "center"; //[default,center,zero]
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments
+// 最小圆弧角度（越小越精细） / minimum angle for a fragment
 fa = 6;
-// minimum size of a fragment.  Low is more fragments
+// 最小面尺寸（越小越精细） / minimum size of a fragment.
 fs = 0.1;
-// number of fragments, overrides $fa and $fs
+// 圆弧段数（覆盖 $fa 和 $fs） / number of fragments, overrides $fa and $fs
 fn = 0;
-// set random seed for
+// 随机种子 / set random seed for
 random_seed = 0; //0.0001
 
 /* [Hidden] */

@@ -4,12 +4,12 @@ include <modules/module_gridfinity_block.scad>
 // Select model
 part = "tile";  // [ board, tile, pawn, knight, bishop, rook, queen, king ]
 
-/* [model detail] */
-// minimum angle for a fragment (fragments = 360/fa).  Low is more fragments 
+/* [模型细节 / model detail] */
+// 最小圆弧角度（越小越精细） / minimum angle for a fragment
 fa = 6; 
-// minimum size of a fragment.  Low is more fragments
+// 最小面尺寸（越小越精细） / minimum size of a fragment.
 fs = 0.1; 
-// number of fragments, overrides $fa and $fs
+// 圆弧段数（覆盖 $fa 和 $fs） / number of fragments, overrides $fa and $fs
 fn = 0;  
 
 /* [Hidden] */

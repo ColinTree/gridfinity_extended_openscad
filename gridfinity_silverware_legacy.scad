@@ -30,18 +30,18 @@ margin = 1;  // .1
 height_in_mm = 35;
 
 /* [Gridfinity features] */
-// Enable magnets
+// 启用磁铁 / Enable magnets
 enable_magnets = false;
-// Enable screws
+// 启用螺丝 / Enable screws
 enable_screws = false;
-//size of magnet, diameter and height. Zack's original used 6.5 and 2.4
+//磁铁尺寸（直径和高度） / size of magnet, diameter and height.
 magnet_size = [6.5, 2.4];  // .1
-//create relief for magnet removal
+//磁铁取出缺口 / create relief for magnet removal
 magnet_easy_release = "auto";//["off","auto","inner","outer"]
-//size of screw, diameter and height. Zack's original used 3 and 6
+//螺丝尺寸（直径和高度） / size of screw, diameter and height.
 screw_size = [3, 6]; // .1
 
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+// 底座开孔上方最小厚度 / Minimum thickness above cutouts in base
 floor_thickness = 1.0;
 
 module end_of_customizer() {}
