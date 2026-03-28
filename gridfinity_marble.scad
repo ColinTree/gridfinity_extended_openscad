@@ -5,20 +5,20 @@ use <modules/module_gridfinity_block.scad>
 use <modules/thirdparty/dotscad/ring_extrude.scad>;
 
 /*<!!start gridfinity_marble!!>*/
-/* [marbleRun] */
+/* [marbleRun / 弹珠滑道] */
 marble_style = "blank"; //[blank, dish, ramp, cup]
-//Size of the marble track. Default 19.
+// 弹珠轨道尺寸（默认19mm） / Size of the marble track. Default 19.
 marble_diameter = 19;
 
-//1=42mm, 1.5=63mm, 2=84mm
+// 积木尺寸（1=42mm, 1.5=63mm, 2=84mm） / 1=42mm, 1.5=63mm, 2=84mm
 Block_Dimention = 1; //[1, 1.5, 2]
 
-//3=21mm, 4=28mm
+// 积木层高（3=21mm, 4=28mm） / 3=21mm, 4=28mm
 Block_Layer_Height = 3; //[3, 4]
 
 Ramp_Base_Offset = 0; //0.1
 
-/* [Cup Top] */
+/* [Cup Top / 顶部轨道] */
 marble_top_style = "straight"; //[none,straight,straight_double,straight_triple,straights,ramp,ramp+dip,ramp+corner,cross,cross+dip,cross+doubledip,dip,corner,corners,cornerramp, triple_corner, straight+corner, split, bend+corner]
 marble_top_rotate = 0; //90
 marble_top_mirror = [0,0,0]; //[0:1]
@@ -26,7 +26,7 @@ marble_top_position = [0,0]; //0.1
 marble_top_profile = "auto"; //[auto, top, round, printable_round]
 marble_top_highlight = false;
 
-/* [Cup Middle] */
+/* [Cup Middle / 中部轨道] */
 marble_middle_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_middle_rotate = 0; //90
 marble_middle_mirror = [0,0,0]; //[0:1]
@@ -34,7 +34,7 @@ marble_middle_position = [0,0]; //0.1
 marble_middle_profile = "auto"; //[auto, top, round, printable_round]
 marble_middle_highlight = false;
 
-/* [Cup layer2 (42mm)] */
+/* [Cup layer2 (42mm) / 第2层轨道] */
 marble_level2_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_level2_rotate = 0; //90
 marble_level2_mirror = [0,0,0]; //[0:1]
@@ -42,7 +42,7 @@ marble_level2_position = [0,0]; //0.1
 marble_level2_profile = "auto"; //[auto, top, round, printable_round]
 marble_level2_highlight = false;
 
-/* [Cup layer1 (21mm)] */
+/* [Cup layer1 (21mm) / 第1层轨道] */
 marble_level1_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_level1_rotate = 0; //90
 marble_level1_mirror = [0,0,0]; //[0:1]
@@ -50,7 +50,7 @@ marble_level1_position = [0,0]; //0.1
 marble_level1_profile = "auto"; //[auto, top, round, printable_round]
 marble_level1_highlight = false;
 
-/* [Cup Bottom] */
+/* [Cup Bottom / 底部轨道] */
 marble_bottom_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
 marble_bottom_rotate = 0; //90
 marble_bottom_mirror = [0,0,0]; //[0:1]
@@ -61,42 +61,42 @@ marble_bottom_highlight = false;
 /*<!!end gridfinity_marble!!>*/
 
 /*<!!start gridfinity_basic_cup!!>*/
-/* [General Cup] */
-// X dimension. grid units (multiples of 42mm) or mm.
+/* [General Cup / 基本杯体] */
+// X轴 / X dimension. grid units (multiples of 42mm) or mm.
 width = [2, 0]; //0.5
-// Y dimension. grid units (multiples of 42mm) or mm.
+// Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [1, 0]; //0.5
-// Z dimension excluding. grid units (multiples of 7mm) or mm.
+// Z轴 / Z dimension excluding. grid units (multiples of 7mm) or mm.
 height = [3, 0]; //3
-// Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
+// 外壁厚度 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
-//under size the bin top by this amount to allow for better stacking
+// 顶部余量 / under size the bin top by this amount to allow for better stacking
 headroom = 0; // 0.1
 
-/* [Cup Lip] */
-// Style of the cup lip
+/* [Cup Lip / 杯沿] */
+// 杯沿样式 / Style of the cup lip
 lip_style = "normal";  // [ normal, reduced, minimum, none:not stackable ]
-// Below this the inside of the lip will be reduced for easier access.
+// 杯沿内侧减薄触发尺寸 / Below this the inside of the lip will be reduced for easier access.
 lip_side_relief_trigger = [1,1]; //0.1
-// Create a relief in the lip
+// 杯沿顶部凹槽高度 / Create a relief in the lip
 lip_top_relief_height = 0; // 0.1
-// how much of the lip to retain on each end
+// 杯沿末端保留宽度 / how much of the lip to retain on each end
 lip_top_relief_width = 8.5; // 0.1
-// add a notch to the lip to prevent sliding.
+// 防滑槽 / add a notch to the lip to prevent sliding.
 lip_top_notches  = true;
-// enable lip clip for connection cups
+// 卡扣位置 / enable lip clip for connection cups
 lip_clip_position = "disabled"; //[disabled, intersection]
 
-/* [Base] */
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+/* [Base / 底座] */
+// 底座最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 1.5;
-// AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
+// 底部格网细分 / AKA half pitch. Enable to subdivide bottom pads to allow sub-cell offsets
 sub_pitch = 1; //[1:"disabled",2:"half pitch",3:"third pitch",4:"quarter pitch"]
 
-/* [debug] */
-//Slice the bin
+/* [debug / 调试] */
+// 切片调试 / Slice the bin
 cut = [0,0,0];
-// enable loging of help messages during render.
+// 帮助日志 / enable loging of help messages during render.
 enable_help = "disabled"; //[info,debug,trace]
 
 /* [Model detail] */
