@@ -1,7 +1,7 @@
 include <modules/module_gridfinity_block.scad>
 
-/* [Utensil count and measurements] */
-// Utensil definitions above this number are ignored
+/* [Utensil count and measurements / 餐具数量和尺寸] */
+// 忽略此数量以上的餐具定义 / Utensil definitions above this number are ignored
 number_of_utensils = 7;
 
 utensil_1_wide = 28;  utensil_1_narrow = 15;  utensil_1_length = 202;
@@ -12,7 +12,7 @@ utensil_5_wide = 32;  utensil_5_narrow = 15;  utensil_5_length = 191;
 utensil_6_wide = 32;  utensil_6_narrow = 15;  utensil_6_length = 150;
 utensil_7_wide = 24;  utensil_7_narrow = 16;  utensil_7_length = 180;
 
-/* [Even more utensils?] */
+/* [Even more utensils? / 更多餐具] */
 utensil_8_wide = 28;  utensil_8_narrow = 15;  utensil_8_length = 202;
 utensil_9_wide = 24;  utensil_9_narrow = 14;  utensil_9_length = 181;
 utensil_10_wide = 37; utensil_10_narrow = 14; utensil_10_length = 181;
@@ -21,27 +21,27 @@ utensil_12_wide = 32; utensil_12_narrow = 15; utensil_12_length = 191;
 utensil_13_wide = 32; utensil_13_narrow = 15; utensil_13_length = 150;
 utensil_14_wide = 24; utensil_14_narrow = 16; utensil_14_length = 180;
 
-/* [Other parameters] */
-// Separation wall thickness
+/* [Other parameters / 其他参数] */
+// 分隔墙厚度 / Separation wall thickness
 separator_wall = 2;  // .1
-// Clearance on sides and ends of utensils
+// 餐具两侧和末端间隙 / Clearance on sides and ends of utensils
 margin = 1;  // .1
-// Height to upper surface excluding perimeter lip
+// 杯体高度（不含杯沿） / Height to upper surface excluding perimeter lip
 height_in_mm = 35;
 
-/* [Gridfinity features] */
-// Enable magnets
+/* [Gridfinity features / Gridfinity功能] */
+// 启用磁铁 / Enable magnets
 enable_magnets = false;
-// Enable screws
+// 启用螺丝 / Enable screws
 enable_screws = false;
-//size of magnet, diameter and height. Zack's original used 6.5 and 2.4
+// 磁铁尺寸（直径和高度） / size of magnet, diameter and height. Zack's original used 6.5 and 2.4
 magnet_size = [6.5, 2.4];  // .1
-//create relief for magnet removal
+// 磁铁取出辅助 / create relief for magnet removal
 magnet_easy_release = "auto";//["off","auto","inner","outer"]
-//size of screw, diameter and height. Zack's original used 3 and 6
+// 螺丝尺寸（直径和深度） / size of screw, diameter and height. Zack's original used 3 and 6
 screw_size = [3, 6]; // .1
 
-// Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
+// 底座最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 1.0;
 
 module end_of_customizer() {}
