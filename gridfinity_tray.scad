@@ -149,9 +149,9 @@ wallpattern_strength = 2; //0.1
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
 // 旋转网格 / rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 在分隔墙上添加图案 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
 // 孔洞边数 / Number of sides of the hole op
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]

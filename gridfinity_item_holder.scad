@@ -72,7 +72,7 @@ dimensions of the tray cutout, a string with comma separated values, and pipe (|
  - depth, [optional] depth in mm
  - example "0,0,2,1|2,0,2,1,2,5"
 */
-//[[xpos, ypos, xsize, ysize, radius, depth]].  xpos, ypos: the x/y position in gridfinity units.  xsize, ysize: the x/y size in gridfinity units.  radius [optional]: corner radius in mm.  depth [optional]: depth in mm.  Example "0,0,2,1|2,0,2,1,2,5"
+// 自定义隔间列表 [[x位, y位, x尺寸, y尺寸, 圆角半径, 深度]] / [[xpos, ypos, xsize, ysize, radius, depth]]. xpos, ypos: position in gridfinity units. xsize, ysize: size in gridfinity units. radius [optional]: corner radius mm. depth [optional]: depth mm. Example "0,0,2,1|2,0,2,1,2,5"
 itemholder_customcompartments = "";
 /*<!!end gridfinity_itemholder!!>*/
 
@@ -117,13 +117,13 @@ horizontal_separator_bend_position = 0;
 horizontal_separator_bend_angle = 0;
 horizontal_separator_bend_separation = 0;
 horizontal_separator_cut_depth=0;
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，以网格单位计） / Separator positions are defined in terms of grid units from the left end
 vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，以网格单位计） / Separator positions are defined in terms of grid units from the left end
 horizontal_separator_config = "10.5|21|42|50|60";
 
 /* [Base / 底座] */
