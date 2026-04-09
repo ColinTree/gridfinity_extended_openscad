@@ -46,7 +46,7 @@ floor_thickness = 1.0;
 
 module end_of_customizer() {}
 
-// Maximum utensil definitions
+// 最大餐具定义数 / Maximum utensil definitions
 silver_defs_all = [
   [ utensil_1_wide, utensil_1_narrow, utensil_1_length ],
   [ utensil_2_wide, utensil_2_narrow, utensil_2_length ],

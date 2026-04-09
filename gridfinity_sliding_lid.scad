@@ -249,7 +249,7 @@ extension_x_position = 0.5;
 extension_y_enabled = "disabled"; //[disabled, front, back]
 extension_y_position = 0.5;
 extension_tabs_enabled = true;
-//Tab size, height, width, thickness, style. width default is height, thickness default is 1.4, style {0,1,2}.
+// 标签尺寸（高度、宽度、厚度、样式）宽度默认=高度，厚度默认1.4，样式{0,1,2} / Tab size, height, width, thickness, style. width default is height, thickness default is 1.4, style {0,1,2}.
 extension_tab_size= [10,0,0,0];
 
 /* [Bottom Text / 底部文字] */

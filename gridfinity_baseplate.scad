@@ -83,12 +83,12 @@ Connector_Snaps_Clearance = 0.2;
 // 启用自定义网格（不支持盖子） / Enable custom grid, you will configure this in the (Lid not supported)
 Custom_Grid_Enabled = false;
 
-//Custom gid sizes
-//I am not sure it this is really useful, but its possible, so here we are.
-//0:off the cell is off
-//1:on the cell is on and all corners are rounded
-//2-16, are bitwise values used to calculate what corners should be rounded, you need to subtract 2 from the value for the bitwise logic (so it does not clash with 0 and 1).
-//[c,[x,y]], c corner value as shown above. [x,y] x and y size of the cell.
+// 自定义网格尺寸 / Custom grid sizes
+// 不确定是否实用，但在技术上可行 / I am not sure it this is really useful, but its possible, so here we are.
+// 0：关闭，该单元格无效 / 0:off the cell is off
+// 1：开启，该单元格所有角均圆角 / 1:on the cell is on and all corners are rounded
+// 2-16：位运算值，用于计算哪些角需要圆角，需减去2以避免与0和1冲突 / 2-16, are bitwise values used to calculate what corners should be rounded, you need to subtract 2 from the value for the bitwise logic (so it does not clash with 0 and 1).
+// [c,[x,y]]，c为角值，[x,y]为单元格的x和y尺寸 / [c,[x,y]], c corner value as shown above. [x,y] x and y size of the cell.
 xpos1 = [3,[2,[3,3]],0,0,2,4,0];
 xpos2 = [2,0,0,0,2,2,0];
 xpos3 = [2,0,0,0,2,2,0];
