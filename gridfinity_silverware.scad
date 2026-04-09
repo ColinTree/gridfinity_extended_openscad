@@ -246,7 +246,7 @@ force_render = true;
 
 module end_of_customizer() {}
 silverware_wall_clearance = 5.7;
-// Maximum utensil definitions
+// 最大餐具定义数 / Maximum utensil definitions
 silver_defs_all = [
   utensil_1,
   utensil_2,

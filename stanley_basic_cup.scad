@@ -179,7 +179,7 @@ floorpattern_pattern_grid_chamfer = 0; //0.1
 floorpattern_pattern_voronoi_noise = 0.75; //0.01
 // 砖块图案中心权重 / brick pattern center weight
 floorpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 底面图案质量（最小面尺寸$fs） / $fs for floor pattern, min size face.
 floorpattern_pattern_quality = 0.4;//0.1:0.1:2
 
 /* [Wall Cutout / 墙面开口] */
