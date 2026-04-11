@@ -117,13 +117,13 @@ horizontal_separator_bend_position = 0;
 horizontal_separator_bend_angle = 0;
 horizontal_separator_bend_separation = 0;
 horizontal_separator_cut_depth=0;
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，以网格单位计）/ Separator positions are defined in terms of grid units from the left end
 vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，以网格单位计）/ Separator positions are defined in terms of grid units from the left end
 horizontal_separator_config = "10.5|21|42|50|60";
 
 /* [Base / 底座] */
@@ -635,8 +635,8 @@ module samplesholder(
     ,help);
 }
 
-// Generates the gridfinity bin with cutouts.
-// Runs the function without needing to pass the variables.
+// 生成带镂空的 Gridfinity 收纳盒 / Generates the gridfinity bin with cutouts.
+// 直接调用，无需传参 / Runs the function without needing to pass the variables.
 module gridfinity_itemholder(
   //itemholder settings
   itemholder_enable_sample = itemholder_enable_sample,
