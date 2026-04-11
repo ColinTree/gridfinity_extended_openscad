@@ -196,8 +196,8 @@ if(show_demo_tracks)
   }
 }
 
-// Generates the gridfinity bin with cutouts.
-// Runs the function without needing to pass the variables.
+// 生成带镂空的 Gridfinity 收纳盒 / Generates the gridfinity bin with cutouts.
+// 直接调用，无需传参 / Runs the function without needing to pass the variables.
 module gridfinity_marble(
   //marble settings
   marble_style=marble_style,

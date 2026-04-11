@@ -149,9 +149,9 @@ wallpattern_strength = 2; //0.1
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
 // 旋转网格 / rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 分隔墙镂空 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
 // 孔洞边数 / Number of sides of the hole op
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
@@ -254,8 +254,8 @@ iySize = 3;
 iCornerRadius = 4;
 iDepth = 5;
 
-// module to build the tray cutouts
-// This is what will be executed by external scripts
+// 构建托盘镂空的模块 / module to build the tray cutouts
+// 供外部脚本调用 / This is what will be executed by external scripts
 module tray(
   num_x=1,
   num_y=2,
@@ -344,8 +344,8 @@ module tray(
   }
 }
 
-// Generates the gridfinity bin with cutouts.
-// Runs the function without needing to pass the variables.
+// 生成带镂空的 Gridfinity 收纳盒 / Generates the gridfinity bin with cutouts.
+// 直接调用，无需传参 / Runs the function without needing to pass the variables.
 module gridfinity_tray(
   //tray settings
   tray_spacing = tray_spacing,

@@ -46,7 +46,7 @@ floor_thickness = 1.0;
 
 module end_of_customizer() {}
 
-// Maximum utensil definitions
+// 最大餐具定义列表 / Maximum utensil definitions
 silver_defs_all = [
   [ utensil_1_wide, utensil_1_narrow, utensil_1_length ],
   [ utensil_2_wide, utensil_2_narrow, utensil_2_length ],
@@ -87,9 +87,9 @@ silver_defs = [ for (i=[0:number_of_utensils-1]) silver_defs_all[i] ];
 silver_w = totwidth(silver_defs);
 // gridfinity modules expect height in units of 7 mm (but fractions are allowed)
 height = height_in_mm / 7;
-// X dimension in gridfinity units
+// X轴尺寸（Gridfinity单位）/ X dimension in gridfinity units
 width = ceil((silver_w + 5.7)/42);
-// Y dimension in gridfinity units
+// Y轴尺寸（Gridfinity单位）/ Y dimension in gridfinity units
 depth = ceil((maxlen(silver_defs)+2*margin+5.7)/42);
 
 if(env_help_enabled("debug")) echo("maxlen: ", maxlen(silver_defs));
@@ -100,7 +100,7 @@ silverware_pockets(silver_defs);
 
 // ##### Modules
 
-// Polygon shape for a single utensil
+// 单件餐具的多边形轮廓 / Polygon shape for a single utensil
 module poly_pocket(topw, botw, oal, wall=separator_wall) {
   b2 = botw/2; t2 = topw/2; o2 = oal/2; qd = abs(topw-botw)/4;  // quarter of delta
   f = (topw > botw) ? (1-sqrt(2)/2)*wall/2 : -(1-sqrt(2)/2)*wall/2;
