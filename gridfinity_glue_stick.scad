@@ -1,10 +1,10 @@
 include <modules/module_gridfinity_block.scad>
 include <modules/gridfinity_constants.scad>
 
-cup_height = 5;
-stick_diameter = 30;
-easement_z = 0.7; // a slightly large opening at the top for compliance while inserting.
-minimum_wall = 4;
+cup_height = 5; // 杯体高度 / cup height
+stick_diameter = 30; // 胶棒直径 / stick diameter
+easement_z = 0.7; // 顶部扩口高度（便于插入） / a slightly large opening at the top for compliance while inserting.
+minimum_wall = 4; // 最小壁厚 / minimum wall thickness
 
 /* [Hidden] */
 $fn = 64;
