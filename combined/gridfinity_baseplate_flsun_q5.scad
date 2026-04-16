@@ -4,11 +4,16 @@
 ///////////////////////////////////////
 // include instead of use, so we get the pitch
 
+/* [FLSUN Q5 底板 / FLSUN Q5 Baseplate] */
+// 螺孔间距（mm），FLSUN Q5 现有螺孔间距 / Distance between existing screw holes on FLSUN Q5
 ear_hole_x = 182.5; // distance between existing screw holes on FLSUN q5.
+// 前面板螺孔距离（mm） / Distance of screw hole from the front panel
 ear_hole_y = 7; // distance of screw hole from the front panel.
+// 底板高度（mm） / Height from top
 cube_z = 4.4; // ht from above.
+// M4 螺栓直径（mm） / Diameter needed for an M4 bolt
 M4_d = 4.2; // diameter needed for an M4 bolt.
-
+// 壁厚延伸量（mm），嵌入墙角 / Extend and imbed into wall to fit around corner
 wallThickness = 0.2; //Extend and imbed in to wall to fit around corner
 
 /* [Hidden] */

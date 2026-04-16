@@ -3,6 +3,8 @@
 //Content hash EF848EBEFA77713F36668912D78DEEB66B75C74D8CC4960035921E2329555E20
 ///////////////////////////////////////
 
+/* [套筒扳手架 / Socket Holder] */
+// 套筒类型 / Socket type
 part = 5; //[1: "METRIC", 2: "IMPERIAL", 3: "Imperial < 1/2\"", 4: "Imperial >= 1/2\"", 5: "Metric >=7mm", 6: "Metric <7mm"]
 
 /* [Hidden] */
