@@ -7,18 +7,31 @@ number_of_utensils = 5;
 
 // 餐具参数：窄宽、宽宽、长度、位置 / utensil, narrow, wide, length, position
 utensil_1 = [30, 0, 202, 1];
+// 餐具2参数：窄宽、宽宽、长度、位置 / utensil 2: narrow, wide, length, position
 utensil_2 = [35, 0, 181, 2];
+// 餐具3参数：窄宽、宽宽、长度、位置 / utensil 3: narrow, wide, length, position
 utensil_3 = [14, 37, 181, 3];
+// 餐具4参数：窄宽、宽宽、长度、位置 / utensil 4: narrow, wide, length, position
 utensil_4 = [12, 33, 155, 4];
+// 餐具5参数：窄宽、宽宽、长度、位置 / utensil 5: narrow, wide, length, position
 utensil_5 = [15, 32, 191, 5];
+// 餐具6参数：窄宽、宽宽、长度、位置 / utensil 6: narrow, wide, length, position
 utensil_6 = [15, 32, 150, 6];
+// 餐具7参数：窄宽、宽宽、长度、位置 / utensil 7: narrow, wide, length, position
 utensil_7 = [16, 24, 180, 7];
+// 餐具8参数：窄宽、宽宽、长度、位置 / utensil 8: narrow, wide, length, position
 utensil_8 = [15, 28, 202, 8];
+// 餐具9参数：窄宽、宽宽、长度、位置 / utensil 9: narrow, wide, length, position
 utensil_9 = [14, 24, 181, 9];
+// 餐具10参数：窄宽、宽宽、长度、位置 / utensil 10: narrow, wide, length, position
 utensil_10 = [14, 37, 181, 10];
+// 餐具11参数：窄宽、宽宽、长度、位置 / utensil 11: narrow, wide, length, position
 utensil_11 = [12, 33, 155, 11];
+// 餐具12参数：窄宽、宽宽、长度、位置 / utensil 12: narrow, wide, length, position
 utensil_12 = [15, 32, 191, 12];
+// 餐具13参数：窄宽、宽宽、长度、位置 / utensil 13: narrow, wide, length, position
 utensil_13 = [15, 32, 150, 13];
+// 餐具14参数：窄宽、宽宽、长度、位置 / utensil 14: narrow, wide, length, position
 utensil_14 = [16, 24, 180, 14];
 
 // 餐具两侧和末端间隙 / Clearance on sides and ends of utensils
@@ -34,8 +47,11 @@ chamber_wall_thickness = [4, -2]; //0.1
 chamber_wall_headroom = 0;//0.1
 // 分隔墙顶部圆角半径 / Radius of the top of the chamber wall, -ve is ratio of top wall thickness. (disabled for bent walls)
 chamber_wall_top_radius = -2; //0.1
+// 竖向分隔弯曲角度 / vertical separator bend angle
 vertical_separator_bend_angle = 45;
+// 竖向分隔弯曲位置 / vertical separator bend position
 vertical_separator_bend_position = 0;
+// 竖向分隔切割深度 / vertical separator cut depth
 vertical_separator_cut_depth=0;
 
 /*<!!start gridfinity_basic_cup!!>*/

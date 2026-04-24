@@ -41,6 +41,7 @@ lip_top_notches  = true;
 lip_clip_position = "disabled"; //[disabled, intersection, center_wall, both]
 // 非42倍数时允许叠放 / allow stacking when bin is not multiples of 42
 lip_non_blocking = false;
+// 高度包含杯沿 / height includes lip
 height_includes_lip = false;
 
 /* [Subdivisions / 分隔] */
@@ -52,14 +53,23 @@ chamber_wall_headroom = 0;//0.1
 chamber_wall_top_radius = 0; //0.1
 // 竖向分隔数 / vertical chamber count
 vertical_chambers = 1;
+// 竖向分隔弯曲间距 / vertical separator bend separation
 vertical_separator_bend_separation = 0;
+// 竖向分隔弯曲角度 / vertical separator bend angle
 vertical_separator_bend_angle = 45;
+// 竖向分隔弯曲位置 / vertical separator bend position
 vertical_separator_bend_position = 0;
+// 竖向分隔切割深度 / vertical separator cut depth
 vertical_separator_cut_depth=0;
+// 横向分隔数 / horizontal chamber count
 horizontal_chambers = 1;
+// 横向分隔弯曲间距 / horizontal separator bend separation
 horizontal_separator_bend_separation = 0;
+// 横向分隔弯曲角度 / horizontal separator bend angle
 horizontal_separator_bend_angle = 45;
+// 横向分隔弯曲位置 / horizontal separator bend position
 horizontal_separator_bend_position = 0;
+// 横向分隔切割深度 / horizontal separator cut depth
 horizontal_separator_cut_depth=0;
 // 启用不均匀分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
@@ -97,6 +107,7 @@ hole_overhang_remedy = 2;
 box_corner_attachments_only = "enabled"; //["disabled","enabled","aligned"]
 // 底座最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 0.7;
+// 底面圆角半径 / radius of the cavity floor
 cavity_floor_radius = -1;// .1
 // 高效底面（节省材料，但底面不平） / Efficient floor option saves material and time, but the internal floor is not flat
 efficient_floor = "off";//[off,on,rounded,smooth]
@@ -119,6 +130,7 @@ align_grid_x = "near";//[near, far]
 align_grid_y = "near";//[near, far]
 
 /* [Label / 标签] */
+// 标签样式 / Style of the label
 label_style = "disabled"; //[disabled: no label, normal:normal, gflabel:gflabel basic label, pred:pred - labels by pred, cullenect:Cullenect click labels V2,  cullenect_legacy:Cullenect click labels v1]
 // 标签位置 / Include overhang for labeling (and specify left/right/center justification)
 label_position = "left"; // [left, right, center, leftchamber, rightchamber, centerchamber]
@@ -126,6 +138,7 @@ label_position = "left"; // [left, right, center, leftchamber, rightchamber, cen
 // 内部分隔墙标签 / Enable labels on internal divider walls
 label_dividers = "disabled"; //[disabled, horizontal, vertical, both]
 
+// 标签尺寸（宽、深、高、圆角） / label size: width, depth, height, radius
 label_size = [0,14,0,0.6]; // 0.01
 // 标签凹槽尺寸 / Size in mm of relief where appropriate. Width, depth, height, radius
 label_relief = [0,0,0,0.6]; // 0.1
@@ -134,6 +147,7 @@ label_walls=[0,1,0,0];  //[0:1:1]
 
 
 /* [Sliding Lid / 滑动盖] */
+// 启用滑动盖 / Enable sliding lid
 sliding_lid_enabled = false;
 // 滑盖厚度 / 0 = wall thickness *2
 sliding_lid_thickness = 0; //0.1
@@ -141,8 +155,11 @@ sliding_lid_thickness = 0; //0.1
 sliding_lid_min_wall_thickness = 0;//0.1
 // 滑盖最小支撑 / 0 = default_sliding_lid_thickness/2
 sliding_lid_min_support = 0;//0.1
+// 滑盖间隙 / clearance of the sliding lid
 sliding_lid_clearance = 0.1;//0.1
+// 拉手样式 / pull style of the sliding lid
 sliding_lid_pull_style = "disabled"; //[disabled, lip, finger]
+// 定位凸起尺寸 / nub size of the sliding lid
 sliding_lid_nub_size = 0.5; //
 
 /* [Finger Slide / 取物圆角] */
@@ -228,30 +245,41 @@ floorpattern_pattern_brick_weight = 5;
 floorpattern_pattern_quality = 0.4;//0.1:0.1:2
 
 /* [Wall Cutout / 墙面开口] */
+// 竖向墙面开口 / vertical wall cutout
 wallcutout_vertical ="disabled"; //[disabled, enabled, inneronly, wallsonly, frontonly, backonly]
 // 竖向开口位置 / wallcoutout position -0.5: disabled; Positive: GF units; Negative: ratio length/abs(value)
 wallcutout_vertical_position=[-2,-0.5,-0.5,-0.5];  //0.01
 // 竖向开口宽度（默认仓宽/2） / default will be binwidth/2
 wallcutout_vertical_width=0;
+// 竖向开口角度 / vertical cutout angle
 wallcutout_vertical_angle=70;
 // 竖向开口高度 / default will be binHeight. 0: radius, -1 floor, Positive: depth from top; Negative: ratio height/abs(value)
 wallcutout_vertical_height=0; //0.1
+// 竖向开口圆角半径 / vertical cutout corner radius
 wallcutout_vertical_corner_radius=5;
+// 横向墙面开口 / horizontal wall cutout
 wallcutout_horizontal ="disabled"; //[disabled, enabled, inneronly, wallsonly, leftonly, rightonly]
 // 横向开口位置 / wallcoutout position -0.5: disabled; Positive: GF units; Negative: ratio length/abs(value)
 wallcutout_horizontal_position=[-2,-0.5,-0.5,-0.5];  //0.01
 // 横向开口宽度（默认仓宽/2） / default will be binwidth/2
 wallcutout_horizontal_width=0;
+// 横向开口角度 / horizontal cutout angle
 wallcutout_horizontal_angle=70;
 // 横向开口高度 / default will be binHeight
 wallcutout_horizontal_height=0; //0.1
+// 横向开口圆角半径 / horizontal cutout corner radius
 wallcutout_horizontal_corner_radius=5;
 
 /* [Extendable / 可延伸] */
+// 启用X轴延伸 / Enable extension in x direction
 extension_x_enabled = "disabled"; //[disabled, front, back]
+// X轴延伸位置 / Position of x extension
 extension_x_position = 0.5;
+// 启用Y轴延伸 / Enable extension in y direction
 extension_y_enabled = "disabled"; //[disabled, front, back]
+// Y轴延伸位置 / Position of y extension
 extension_y_position = 0.5;
+// 启用延伸卡扣 / Enable extension tabs
 extension_tabs_enabled = true;
 // 延伸卡扣尺寸（高、宽、厚、样式） / Tab size, height, width, thickness, style. width default is height, thickness default is 1.4, style {0,1,2}.
 extension_tab_size= [10,0,0,0];

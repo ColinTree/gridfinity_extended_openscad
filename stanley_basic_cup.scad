@@ -44,22 +44,33 @@ lip_top_notches  = false;
 lip_clip_position = "disabled"; //[disabled, intersection, center_wall, both]
 // 非42倍数时允许叠放 / allow stacking when bin is not multiples of 42
 lip_non_blocking = false;
+// 高度包含杯沿 / height includes lip
 height_includes_lip = true;
 
 /* [Subdivisions / 分隔] */
+// 分隔墙厚度 / wall thickness of subdivisions
 chamber_wall_thickness = 1.2;
 // 分隔墙高度减量 / Reduce the wall height by this amount
 chamber_wall_headroom = 0;//0.1
 // 竖向分隔数 / X dimension subdivisions
 vertical_chambers = 1;
+// 竖向分隔弯曲位置 / vertical separator bend position
 vertical_separator_bend_position = 0;
+// 竖向分隔弯曲角度 / vertical separator bend angle
 vertical_separator_bend_angle = 0;
+// 竖向分隔弯曲间距 / vertical separator bend separation
 vertical_separator_bend_separation = 0;
+// 竖向分隔切割深度 / vertical separator cut depth
 vertical_separator_cut_depth=0;
+// 横向分隔数 / horizontal chamber count
 horizontal_chambers = 1;
+// 横向分隔弯曲位置 / horizontal separator bend position
 horizontal_separator_bend_position = 0;
+// 横向分隔弯曲角度 / horizontal separator bend angle
 horizontal_separator_bend_angle = 0;
+// 横向分隔弯曲间距 / horizontal separator bend separation
 horizontal_separator_bend_separation = 0;
+// 横向分隔切割深度 / horizontal separator cut depth
 horizontal_separator_cut_depth=0;
 // 启用不均匀分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
@@ -73,6 +84,7 @@ horizontal_separator_config = "10.5|21|42|50|60";
 /* [Base / 底座] */
 // 底座最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 1.2;
+// 底面圆角半径 / radius of the cavity floor
 cavity_floor_radius = -1;// .1
 // 平底圆角半径 / Adjust the radius of the rounded flat base. -1 uses the corner radius.
 flat_base_rounded_radius = 4;
@@ -80,6 +92,7 @@ flat_base_rounded_radius = 4;
 flat_base_rounded_easyPrint = -1;
 
 /* [Label / 标签] */
+// 标签样式 / style of the label
 label_style = "disabled"; //[disabled: no label, normal:normal, gflabel:gflabel basic label, pred:pred - labels by pred, cullenect:Cullenect click labels V2,  cullenect_legacy:Cullenect click labels v1]
 // 标签位置 / Include overhang for labeling (and specify left/right/center justification)
 label_position = "left"; // [left, right, center, leftchamber, rightchamber, centerchamber]
@@ -91,6 +104,7 @@ label_relief = [0,0,0,0.6]; // 0.1
 label_walls=[0,1,0,0];  //[0:1:1]
     
 /* [Sliding Lid / 滑动盖] */
+// 启用滑动盖 / Enable sliding lid
 sliding_lid_enabled = false;
 // 滑盖厚度 / 0 = wall thickness *2
 sliding_lid_thickness = 0; //0.1
@@ -98,8 +112,11 @@ sliding_lid_thickness = 0; //0.1
 sliding_lid_min_wall_thickness = 0;//0.1
 // 滑盖最小支撑 / 0 = default_sliding_lid_thickness/2
 sliding_lid_min_support = 0;//0.1
+// 滑盖间隙 / clearance of the sliding lid
 sliding_lid_clearance = 0.1;//0.1
+// 拉手样式 / pull style of the sliding lid
 sliding_lid_pull_style = "disabled"; //[disabled, lip, finger]
+// 定位凸起尺寸 / nub size of the sliding lid
 sliding_lid_nub_size = 0.5; //
 
 /* [Finger Slide / 取物圆角] */
@@ -179,34 +196,45 @@ floorpattern_pattern_grid_chamfer = 0; //0.1
 floorpattern_pattern_voronoi_noise = 0.75; //0.01
 // 砖块图案中心权重 / brick pattern center weight
 floorpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 图案质量 / $fs for floor pattern, min size face.
 floorpattern_pattern_quality = 0.4;//0.1:0.1:2
 
 /* [Wall Cutout / 墙面开口] */
+// 竖向墙面开口 / vertical wall cutout
 wallcutout_vertical ="disabled"; //[disabled, enabled, wallsonly, frontonly, backonly]
 // 竖向开口位置 / wall to enable on, front, back, left, right. 0: disabled; Positive: GF units; Negative: ratio length/abs(value)
 wallcutout_vertical_position=-2;  //0.1
 // 竖向开口宽度（默认仓宽/2） / default will be binwidth/2
 wallcutout_vertical_width=0;
+// 竖向开口角度 / vertical cutout angle
 wallcutout_vertical_angle=70;
 // 竖向开口高度 / default will be binHeight
 wallcutout_vertical_height=0;
+// 竖向开口圆角半径 / vertical cutout corner radius
 wallcutout_vertical_corner_radius=5;
+// 横向墙面开口 / horizontal wall cutout
 wallcutout_horizontal ="disabled"; //[disabled, enabled, wallsonly, leftonly, rightonly]
 // 横向开口位置 / wall to enable on, front, back, left, right. 0: disabled; Positive: GF units; Negative: ratio length/abs(value)
 wallcutout_horizontal_position=-2;  //0.1
 // 横向开口宽度（默认仓宽/2） / default will be binwidth/2
 wallcutout_horizontal_width=0;
+// 横向开口角度 / horizontal cutout angle
 wallcutout_horizontal_angle=70;
 // 横向开口高度 / default will be binHeight
 wallcutout_horizontal_height=0;
+// 横向开口圆角半径 / horizontal cutout corner radius
 wallcutout_horizontal_corner_radius=5;
 
 /* [Extendable / 可延伸] */
+// 启用X轴延伸 / Enable extension in x direction
 extension_x_enabled = "disabled"; //[disabled, front, back]
+// X轴延伸位置 / Position of x extension
 extension_x_position = 0.5; 
+// 启用Y轴延伸 / Enable extension in y direction
 extension_y_enabled = "disabled"; //[disabled, front, back]
+// Y轴延伸位置 / Position of y extension
 extension_y_position = 0.5; 
+// 启用延伸卡扣 / Enable extension tabs
 extension_tabs_enabled = true;
 // 延伸卡扣尺寸 / Tab size, height, width, thickness, style. width default is height, thickness default is 1.4, style {0,1,2}.
 extension_tab_size= [10,0,0,0];
@@ -236,6 +264,7 @@ enable_help = "disabled"; //[info,debug,trace]
 pitch = [55,40,41];  //[0:1:9999]
 // 间隙（减小仓体尺寸） / clearance around the bin, will reduce the bin by this amount in mm.
 clearance = [0.5, 0.5, 0];
+// 角落圆角半径 / corner radius
 corner_radius = 3.75;
 // 颜色方案 / Assign colours to the bin
 set_colour = "enable"; //[disabled, enable, preview, lip]
@@ -253,38 +282,61 @@ random_seed = 0; //0.0001
 force_render = true;
 
 /* [Stanley Pro Shallow] */
+// 尺寸（宽、深、高） / size (width, depth, height)
 proshallow_size = [40,55,41];
+// 壁厚 / wall thickness
 proshallow_wall_thickenss = 1.2;
+// 角落圆角半径 / corner radius
 proshallow_corner_radius = 3.75;
+// 底部圆角半径 / bottom radius
 proshallow_bottom_radius = 3;
 
 /* [Stanley Pro Deep] */
+// 尺寸（宽、深、高） / size (width, depth, height)
 prodeep_size = [40,55,81];
+// 壁厚 / wall thickness
 prodeep_wall_thickenss = 1.2;
+// 角落圆角半径 / corner radius
 prodeep_corner_radius = 3.75;
+// 底部圆角半径 / bottom radius
 prodeep_bottom_radius = 3;
 
 /* [Stanley FatMax Pro 1-97-519] */
+// 尺寸（宽、深、高） / size (width, depth, height)
 fatmaxshallow_size = [80,110,49];
+// 壁厚 / wall thickness
 fatmaxshallow_wall_thickenss = 1.8;
+// 角落圆角半径 / corner radius
 fatmaxshallow_corner_radius = 10;
+// 底部圆角半径 / bottom radius
 fatmaxshallow_bottom_radius = 4;
 
 /* [Stanley FatMax Pro Deep 1-97-521] */
+// 尺寸（宽、深、高） / size (width, depth, height)
 fatmaxdeep_size = [80,108,91];
+// 壁厚 / wall thickness
 fatmaxdeep_wall_thickenss = 1.8;
+// 角落圆角半径 / corner radius
 fatmaxdeep_corner_radius = 10;
+// 底部圆角半径 / bottom radius
 fatmaxdeep_bottom_radius = 4;
 
 /* [Stanley 25-Compartment 1-92-762] */
+// 尺寸（宽、深、高） / size (width, depth, height)
 compartment25_size = [52,72,70];
+// 壁厚 / wall thickness
 compartment25_wall_thickenss = 1.2;
+// 角落圆角半径 / corner radius
 compartment25_corner_radius = 8;
+// 底部圆角半径 / bottom radius
 compartment25_bottom_radius = 4;
- 
+// 前部尺寸（宽、深、高） / front size (width, depth, height)
 compartment25front_size = [142,72,70];
+// 前部壁厚 / front wall thickness
 compartment25front_wall_thickenss = 1.2;
+// 前部角落圆角半径 / front corner radius
 compartment25front_corner_radius = 8;
+// 前部底部圆角半径 / front bottom radius
 compartment25front_bottom_radius = 4;
  
 /* [Hidden] */
