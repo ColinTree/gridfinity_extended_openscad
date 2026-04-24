@@ -15,6 +15,7 @@ use <modules/module_gridfinity_block.scad>
 /* [Sliding Lid / 滑动盖] */
 // 渲染选择 / select what to render
 render_choice = "both";//[both, lid, cup, both connected]
+// 启用滑动盖 / Enable sliding lid
 sliding_lid_enabled = true;
 // 滑盖厚度 / 0 = wall thickness *2
 sliding_lid_thickness = 0; //0.1
@@ -22,15 +23,23 @@ sliding_lid_thickness = 0; //0.1
 sliding_lid_min_wallThickness = 0;//0.1
 // 滑盖最小支撑 / 0 = default_sliding_lid_thickness/2
 sliding_lid_min_support = 0;//0.1
+// 拉手样式 / pull style of the sliding lid
 sliding_lid_pull_style = "disabled"; //[disabled, lip, finger]
+// 滑盖间隙 / clearance of the sliding lid
 sliding_lid_clearance = 0.1;//0.1
+// 滑盖唇缘间隙 / lip clearance of the sliding lid
 sliding_lid_lip_clearance = 0.1;//0.1
+// 定位凸起尺寸 / nub size of the sliding lid
 sliding_lid_nub_size = 0.5; //
 
 /* [Sliding Cutout / 滑盖镂空] */
+// 启用滑盖镂空 / Enable cutout in sliding lid
 sliding_lid_cutout_enabled = false; //
+// 镂空尺寸 / cutout size
 sliding_lid_cutout_size = [-2,-2]; //0.1
+// 镂空圆角半径 / cutout radius
 sliding_lid_cutout_radius = -4; //0.1
+// 镂空位置 / cutout position
 sliding_lid_cutout_position = [0,0]; //0.1
 
 /* [Sliding Text / 滑盖文字] */

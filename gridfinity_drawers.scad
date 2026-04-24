@@ -16,6 +16,7 @@ include <modules/module_patterns.scad>
 /* [Render / 渲染] */
 // 选择渲染对象 / select what to render
 render_choice = "everything"; //[everything:Everything, onedrawer:Single Drawer, drawers:All drawers, chest:Chest]
+// 渲染位置 / render position
 position="center"; //["center","zero"]
 
 /* [Chest / 抽屉柜] */
@@ -27,6 +28,7 @@ drawer_inner_depth = 3;
 drawer_inner_height = 4;
 // 抽屉数量 / Number of drawers
 drawer_count = 3;
+// 启用自定义抽屉尺寸 / Enable custom drawer sizes
 drawer_enable_custom_sizes = false;
 // 自定义抽屉高度（Gridfinity单位） / Inner height of drawer in Gridfinity units. Edit in script for more than 4 items.
 drawer_custom_sizes = [1,2,3,4];
@@ -44,15 +46,23 @@ chest_drawer_slide_width = 10;
 /* [Drawer / 抽屉] */
 // 把手尺寸（宽、深、高、圆角） / Handle size width, depth, height, and radius. Height, less than 0 drawerHeight/abs(height). radius, -1 = depth/2.
 handle_size = [4, 10, -1, -1];
+// 把手垂直居中 / Vertical center the handle
 handle_vertical_center = false;
+// 把手开口比例 / Handle cut factor
 handle_cut_factor=0.5;
+// 旋转把手 / Rotate the handle
 handle_rotate = false;
+// 抽屉壁厚 / Wall thickness of the drawer
 drawer_wall_thickness = 2; // 0.1
+// 抽屉底座样式 / base style of the drawer
 drawer_base = "default"; //[grid:Grid only, floor:floor only, default:Grid and floor]
+// 启用抽屉磁铁 / Enable magnets in the drawer
 drawer_enable_magnet = true;
+// 抽屉磁铁尺寸（直径和高度） / Magnet size for drawer
 drawer_magnet_size = [6.5, 2.4];  // .1
 
 /* [Chest Top Plate / 柜顶板] */
+// 顶板墙面镂空样式 / chest top wall pattern style
 chest_top_wallpattern_style = "none"; //[none, grid, gridrotated, hexgrid,hexgridrotated, voronoi,voronoigrid,voronoihexgrid]
 // 顶板样式 / Plate Style
 chest_top_style = "none"; //[none: None, baseplate:Base Plate, lugs: Supportless feet]
@@ -62,10 +72,13 @@ chest_top_base_plate_enable_magnets = true;
 chest_top_base_plate_magnet_size = [6.5, 2.4];  // .1
 // 框架墙高度限制 / Reduce the frame wall size to this value
 chest_top_base_plate_reduced_wall_height = -1; //0.1
+// 顶板框架墙渐缩 / Taper the reduced wall of the top plate
 chest_top_base_plate_reduced_wall_taper = false;
 
 /* [Chest Base / 柜底] */
+// 底板墙面镂空样式 / chest bottom wall pattern style
 chest_bottom_wallpattern_style = "none"; //[none, grid, gridrotated, hexgrid,hexgridrotated, voronoi,voronoigrid,voronoihexgrid]
+// 底板网格样式 / chest bottom grid style
 chest_bottom_grid = "none"; //[none: None, grid: Gridfinity grid, lugs: Supportless feet]
 // 底脚配合间隙 / Fit clearance of chest feet
 chest_leg_clearance = 0.35; //.001
@@ -86,6 +99,7 @@ flat_base = "off";
 /* [Chest Wall Pattern / 柜体墙面镂空] */
 // 镂空边框宽度 / wall pattern border width. -1 defaults to chest_wall_thickness. less than 0 chest_wall_thickness/abs(wallpattern_border_width)
 wallpattern_border_width = -1;
+// 高效背板（节省材料） / efficient back panel
 efficient_back = true;
 // 启用墙面镂空 / Grid wall patter
 wallpattern_enabled=false;

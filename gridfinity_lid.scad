@@ -8,7 +8,9 @@ use <modules/module_gridfinity_lid.scad>
 width = [2, 0]; //0.1
 // Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 depth = [1, 0]; //0.1
+// 居中填充网格X轴 / center fill grid x
 center_fill_grid_x = true;
+// 居中填充网格Y轴 / center fill grid y
 center_fill_grid_y = true;
 
 /* [Lid / 盖板] */
@@ -24,6 +26,7 @@ Magnet_Size = [6.5, 2.4];  // .1
 Reduced_Wall_Height = -1; //0.1
 
 /* [Lid Options / 盖板选项] */
+// 盖板包含磁铁 / Include magnets in the lid
 Lid_Include_Magnets = true;
 // 高效底座高度（GF单位） / Base height, when the bin on top will sit, in GF units
 Lid_Efficient_Base_Height = 0.4;// [0.4:0.1:1]

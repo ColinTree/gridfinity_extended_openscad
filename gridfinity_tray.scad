@@ -7,14 +7,20 @@ include <modules/module_wallplacard.scad>
 
 /*<!!start gridfinity_tray!!>*/
 /* [Tray / 托盘] */
+// 托盘圆角半径 / corner radius of the tray
 tray_corner_radius = 2;
 
 // 底座高度以上的高度 / Height above the base height
 tray_zpos = 0;
+// 托盘磁铁半径 / tray magnet radius
 tray_magnet_radius = 5;
+// 托盘磁铁厚度 / tray magnet thickness
 tray_magnet_thickness = 5;
+// 托盘间隔间距 / spacing between tray compartments
 tray_spacing = 2; //0.1
+// 托盘竖向分隔数 / number of vertical tray compartments
 tray_vertical_compartments = 1;
+// 托盘横向分隔数 / number of horizontal tray compartments
 tray_horizontal_compartments = 1;
 /*
 xpos,ypos,xsize,ysize,radius,depth.

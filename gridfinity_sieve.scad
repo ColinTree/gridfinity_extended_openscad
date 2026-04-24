@@ -18,6 +18,7 @@ sieve_hole_sides = 6;
 sieve_cell_size = [10, 10]; //0.1
 // 间隔区间距 / Spacing around the compartments
 sieve_compartment_clearance= 7; //0.1
+// 间隔区填充方式 / Compartment fill mode
 sieve_compartment_fill = "none"; //["none", "space", "crop"]
 /*<!!end gridfinity_sieve!!>*/
 
@@ -47,6 +48,7 @@ lip_top_notches  = true;
 /* [Base / 底座] */
 // 底座最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 2;
+// 底面圆角半径 / radius of the cavity floor
 cavity_floor_radius = -1;// .1
 // 高效底面 / Efficient floor option saves material and time, but the internal floor is not flat
 efficient_floor = "smooth";//[off,on,rounded,smooth]
@@ -54,6 +56,7 @@ efficient_floor = "smooth";//[off,on,rounded,smooth]
 flat_base = true;
 
 /* [Label / 标签] */
+// 标签样式 / style of the label
 label_style = "disabled"; //[disabled: no label, normal:normal, gflabel:gflabel basic label, pred:pred - labels by pred, cullenect:Cullenect click labels V2,  cullenect_legacy:Cullenect click labels v1]
 // 标签位置 / Include overhang for labeling (and specify left/right/center justification)
 label_position = "left"; // [left, right, center, leftchamber, rightchamber, centerchamber]

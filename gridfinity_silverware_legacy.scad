@@ -4,21 +4,35 @@ include <modules/module_gridfinity_block.scad>
 // 忽略此数量以上的餐具定义 / Utensil definitions above this number are ignored
 number_of_utensils = 7;
 
+// 餐具1：宽宽、窄宽、长度 / utensil 1: wide, narrow, length
 utensil_1_wide = 28;  utensil_1_narrow = 15;  utensil_1_length = 202;
+// 餐具2：宽宽、窄宽、长度 / utensil 2: wide, narrow, length
 utensil_2_wide = 24;  utensil_2_narrow = 14;  utensil_2_length = 181;
+// 餐具3：宽宽、窄宽、长度 / utensil 3: wide, narrow, length
 utensil_3_wide = 37;  utensil_3_narrow = 14;  utensil_3_length = 181;
+// 餐具4：宽宽、窄宽、长度 / utensil 4: wide, narrow, length
 utensil_4_wide = 33;  utensil_4_narrow = 12;  utensil_4_length = 155;
+// 餐具5：宽宽、窄宽、长度 / utensil 5: wide, narrow, length
 utensil_5_wide = 32;  utensil_5_narrow = 15;  utensil_5_length = 191;
+// 餐具6：宽宽、窄宽、长度 / utensil 6: wide, narrow, length
 utensil_6_wide = 32;  utensil_6_narrow = 15;  utensil_6_length = 150;
+// 餐具7：宽宽、窄宽、长度 / utensil 7: wide, narrow, length
 utensil_7_wide = 24;  utensil_7_narrow = 16;  utensil_7_length = 180;
 
 /* [Even more utensils? / 更多餐具] */
+// 餐具8：宽宽、窄宽、长度 / utensil 8: wide, narrow, length
 utensil_8_wide = 28;  utensil_8_narrow = 15;  utensil_8_length = 202;
+// 餐具9：宽宽、窄宽、长度 / utensil 9: wide, narrow, length
 utensil_9_wide = 24;  utensil_9_narrow = 14;  utensil_9_length = 181;
+// 餐具10：宽宽、窄宽、长度 / utensil 10: wide, narrow, length
 utensil_10_wide = 37; utensil_10_narrow = 14; utensil_10_length = 181;
+// 餐具11：宽宽、窄宽、长度 / utensil 11: wide, narrow, length
 utensil_11_wide = 33; utensil_11_narrow = 12; utensil_11_length = 155;
+// 餐具12：宽宽、窄宽、长度 / utensil 12: wide, narrow, length
 utensil_12_wide = 32; utensil_12_narrow = 15; utensil_12_length = 191;
+// 餐具13：宽宽、窄宽、长度 / utensil 13: wide, narrow, length
 utensil_13_wide = 32; utensil_13_narrow = 15; utensil_13_length = 150;
+// 餐具14：宽宽、窄宽、长度 / utensil 14: wide, narrow, length
 utensil_14_wide = 24; utensil_14_narrow = 16; utensil_14_length = 180;
 
 /* [Other parameters / 其他参数] */

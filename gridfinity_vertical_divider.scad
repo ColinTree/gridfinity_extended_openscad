@@ -7,14 +7,23 @@ use <modules/module_gridfinity_block.scad>
 include <modules/module_patterns.scad>
 
 /* [Divider / 分隔件] */
+// 分隔件数量 / number of dividers
 divider_count = 4;
+// 分隔件高度（mm） / height of divider in mm
 divider_height = 50;
+// 分隔件宽度（mm） / width of divider in mm
 divider_width = 3;
+// 分隔件底座高度（mm） / base height of divider in mm
 divider_base_height = 10;
+// 分隔件圆角半径（mm） / corner radius of divider in mm
 divider_radius = 5;
+// 前顶部缩进量（mm） / front top inset in mm
 divider_front_top_inset=20;
+// 前顶部角度 / front top angle
 divider_front_top_angle=45;
+// 后顶部缩进量（mm） / back top inset in mm
 divider_back_top_inset=20;
+// 后顶部角度 / back top angle
 divider_back_top_angle=45;
 
 /* [Wall Pattern / 墙面镂空] */
@@ -62,6 +71,7 @@ height = [1, 0]; //0.1
 filled_in = false;
 // 外壁厚度 / Wall thickness of outer walls. default, height < 8 0.95, height < 16 1.2, height > 16 1.6 (Zack's design is 0.95 mm)
 wall_thickness = 0;  // .01
+// 渲染位置 / where to render the model
 position = "center"; //[default,center,zero]
 
 /* [Cup Lip / 杯沿] */
@@ -89,6 +99,7 @@ hole_overhang_remedy = 2;
 box_corner_attachments_only = "enabled"; //["disabled","enabled","aligned"]
 // 底座最小厚度 / Minimum thickness above cutouts in base (Zack's design is effectively 1.2)
 floor_thickness = 0.7;
+// 底面圆角半径 / radius of the cavity floor
 cavity_floor_radius = -1;// .1
 // 高效底面 / Efficient floor option saves material and time, but the internal floor is not flat
 efficient_floor = "off";//[off,on,rounded,smooth]

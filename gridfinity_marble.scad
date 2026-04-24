@@ -6,6 +6,7 @@ use <modules/thirdparty/dotscad/ring_extrude.scad>;
 
 /*<!!start gridfinity_marble!!>*/
 /* [marbleRun / 弹珠滑道] */
+// 弹珠滑道样式 / marble run style
 marble_style = "blank"; //[blank, dish, ramp, cup]
 // 弹珠轨道尺寸（默认19mm） / Size of the marble track. Default 19.
 marble_diameter = 19;
@@ -16,46 +17,77 @@ Block_Dimention = 1; //[1, 1.5, 2]
 // 积木层高（3=21mm, 4=28mm） / 3=21mm, 4=28mm
 Block_Layer_Height = 3; //[3, 4]
 
+// 斜坡底座偏移 / ramp base offset
 Ramp_Base_Offset = 0; //0.1
 
 /* [Cup Top / 顶部轨道] */
+// 顶部轨道样式 / top track style
 marble_top_style = "straight"; //[none,straight,straight_double,straight_triple,straights,ramp,ramp+dip,ramp+corner,cross,cross+dip,cross+doubledip,dip,corner,corners,cornerramp, triple_corner, straight+corner, split, bend+corner]
+// 顶部轨道旋转角度 / top track rotation
 marble_top_rotate = 0; //90
+// 顶部轨道镜像 / top track mirror
 marble_top_mirror = [0,0,0]; //[0:1]
+// 顶部轨道位置 / top track position
 marble_top_position = [0,0]; //0.1
+// 顶部轨道截面 / top track profile
 marble_top_profile = "auto"; //[auto, top, round, printable_round]
+// 高亮顶部轨道 / highlight top track
 marble_top_highlight = false;
 
 /* [Cup Middle / 中部轨道] */
+// 中部轨道样式 / middle track style
 marble_middle_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
+// 中部轨道旋转角度 / middle track rotation
 marble_middle_rotate = 0; //90
+// 中部轨道镜像 / middle track mirror
 marble_middle_mirror = [0,0,0]; //[0:1]
+// 中部轨道位置 / middle track position
 marble_middle_position = [0,0]; //0.1
+// 中部轨道截面 / middle track profile
 marble_middle_profile = "auto"; //[auto, top, round, printable_round]
+// 高亮中部轨道 / highlight middle track
 marble_middle_highlight = false;
 
 /* [Cup layer2 (42mm) / 第2层轨道] */
+// 第2层轨道样式 / layer2 track style
 marble_level2_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
+// 第2层轨道旋转角度 / layer2 track rotation
 marble_level2_rotate = 0; //90
+// 第2层轨道镜像 / layer2 track mirror
 marble_level2_mirror = [0,0,0]; //[0:1]
+// 第2层轨道位置 / layer2 track position
 marble_level2_position = [0,0]; //0.1
+// 第2层轨道截面 / layer2 track profile
 marble_level2_profile = "auto"; //[auto, top, round, printable_round]
+// 高亮第2层轨道 / highlight layer2 track
 marble_level2_highlight = false;
 
 /* [Cup layer1 (21mm) / 第1层轨道] */
+// 第1层轨道样式 / layer1 track style
 marble_level1_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
+// 第1层轨道旋转角度 / layer1 track rotation
 marble_level1_rotate = 0; //90
+// 第1层轨道镜像 / layer1 track mirror
 marble_level1_mirror = [0,0,0]; //[0:1]
+// 第1层轨道位置 / layer1 track position
 marble_level1_position = [0,0]; //0.1
+// 第1层轨道截面 / layer1 track profile
 marble_level1_profile = "auto"; //[auto, top, round, printable_round]
+// 高亮第1层轨道 / highlight layer1 track
 marble_level1_highlight = false;
 
 /* [Cup Bottom / 底部轨道] */
+// 底部轨道样式 / bottom track style
 marble_bottom_style = "none"; //[none,straight,straight_double,straight_triple,straights,ramp,cross,cross+dip,dip,corner,corners,cornerramp,triple_corner, straight+corner, split, bend+corner]
+// 底部轨道旋转角度 / bottom track rotation
 marble_bottom_rotate = 0; //90
+// 底部轨道镜像 / bottom track mirror
 marble_bottom_mirror = [0,0,0]; //[0:1]
+// 底部轨道位置 / bottom track position
 marble_bottom_position = [0,0]; //0.1
+// 底部轨道截面 / bottom track profile
 marble_bottom_profile = "auto"; //[auto, top, round, printable_round]
+// 高亮底部轨道 / highlight bottom track
 marble_bottom_highlight = false;
 
 /*<!!end gridfinity_marble!!>*/
