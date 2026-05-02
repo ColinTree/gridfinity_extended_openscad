@@ -1,6 +1,6 @@
 include <modules/module_gridfinity_block.scad>
 
-part = 5; //[1: "METRIC", 2: "IMPERIAL", 3: "Imperial < 1/2\"", 4: "Imperial >= 1/2\"", 5: "Metric >=7mm", 6: "Metric <7mm"]
+part = 5; //[1: "公制 / METRIC", 2: "英制 / IMPERIAL", 3: "英制小于1/2英寸 / Imperial < 1/2\"", 4: "英制大于等于1/2英寸 / Imperial >= 1/2\"", 5: "公制大于等于7mm / Metric >=7mm", 6: "公制小于7mm / Metric <7mm"]
 
 /* [Hidden] */
 $fn = 64;
