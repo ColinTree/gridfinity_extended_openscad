@@ -11,7 +11,9 @@ Width = [3, 0]; //0.1
 // Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 Depth = [2, 0]; //0.1
 oversize_method = "fill"; //[crop, fill]
+// X轴网格填充位置 / position_fill_grid_x [near:"← left", center:"↔ center", far:"→ right"]
 position_fill_grid_x = "near";//[near:"← left", center:"↔ center", far:"→ right"]
+// Y轴网格填充位置 / position_fill_grid_y [far:"↑ up", center:"↕ center", near:"↓ bottom"]
 position_fill_grid_y = "near";//[far:"↑ up", center:"↕ center", near:"↓ bottom"]
 // X轴外框尺寸 / X outer dimension. grid units (multiples of 42mm) or mm.
 outer_Width = [0, 0]; //0.1
@@ -19,7 +21,9 @@ outer_Width = [0, 0]; //0.1
 outer_Depth = [0, 0]; //0.1
 // Z轴外框尺寸 / z outer dimension. mm.
 outer_Height = 0; //0.1
+// X轴外框中网格位置 / position_grid_in_outer_x [near:"← left", center:"↔ center", far:"→ right"]
 position_grid_in_outer_x = "center";//[near:"← left", center:"↔ center", far:"→ right"]
+// Y轴外框中网格位置 / position_grid_in_outer_y [far:"↑ up", center:"↕ center", near:"↓ bottom"]
 position_grid_in_outer_y = "center";//[far:"↑ up", center:"↕ center", near:"↓ bottom"]
 // 框架墙高度限制 / Reduce the frame wall size to this value
 Reduced_Wall_Height = -1; //0.1
