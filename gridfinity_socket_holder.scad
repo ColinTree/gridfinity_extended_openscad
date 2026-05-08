@@ -1,5 +1,7 @@
 include <modules/module_gridfinity_block.scad>
 
+/* [Settings / 设置] */
+// 零件选择 / Part selection
 part = 5; //[1: "METRIC", 2: "IMPERIAL", 3: "Imperial < 1/2\"", 4: "Imperial >= 1/2\"", 5: "Metric >=7mm", 6: "Metric <7mm"]
 
 /* [Hidden] */
