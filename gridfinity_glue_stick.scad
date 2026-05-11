@@ -3,7 +3,7 @@ include <modules/gridfinity_constants.scad>
 
 cup_height = 5;
 stick_diameter = 30;
-easement_z = 0.7; // a slightly large opening at the top for compliance while inserting.
+easement_z = 0.7; // 顶部插入余量 / a slightly large opening at the top for compliance while inserting.
 minimum_wall = 4;
 
 /* [Hidden] */
