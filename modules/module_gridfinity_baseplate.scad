@@ -6,30 +6,30 @@ use <module_gridfinity_baseplate_regular.scad>
 use <module_gridfinity_baseplate_cnclaser.scad>
 use <module_gridfinity_frame_connectors.scad>
 
-/* [BasePlate] */
-// Plate Style
+/* [底板 / BasePlate] */
+// 底板样式 / Plate Style
 Default_Base_Plate_Options = "default";//[default:Default, cnc:CNC or Laser]
 Default_Oversize_method = "fill"; //[crop, fill]
 
-// Magnet
-// Enable magnets
+// 磁铁
+// 启用磁铁 / Enable magnets
 Default_Enable_Magnets = true;
-//size of magnet, diameter and height. Zacks original used 6.5 and 2.4 
+//磁铁尺寸（直径和高度） / size of magnet, diameter and height. Zacks original used 6.5 and 2.4 
 Default_Magnet_Size = [6.5, 2.4];  // .1
 
-/* [Base Plate Clips - POC dont use yet]*/
+/* [底板连接夹 / Base Plate Clips - POC dont use yet]*/
 Default_Connector_Position = "center_wall";
 Default_Connector_Clip_Enabled = false;
 Default_Connector_Clip_Size = 10;
 Default_Connector_Clip_Tolerance = 0.1;
 
-//This feature is not yet finalised, or working properly. 
+//此功能尚未完善 / This feature is not yet finalised, or working properly. 
 Default_Connector_Butterfly_Enabled = false;
 Default_Connector_Butterfly_Size = [6,6,1.5];
 Default_Connector_Butterfly_Radius = 0.1;
 Default_Connector_Butterfly_Tolerance = 0.1;
 
-//This feature is not yet finalised, or working properly. 
+//此功能尚未完善 / This feature is not yet finalised, or working properly. 
 Default_Connector_Filament_Enabled = false;
 Default_Connector_Filament_Diameter = 2;
 Default_Connector_Filament_Length = 8;
