@@ -2,12 +2,17 @@
 include <modules/gridfinity_constants.scad>
 use <modules/module_gridfinity_baseplate_common.scad>
 
-ear_hole_x = 182.5; // distance between existing screw holes on FLSUN q5.
-ear_hole_y = 7; // distance of screw hole from the front panel.
-cube_z = 4.4; // ht from above.
-M4_d = 4.2; // diameter needed for an M4 bolt.
-
-wallThickness = 0.2; //Extend and imbed in to wall to fit around corner
+/* [FLSUN Q5 底板 / FLSUN Q5 Baseplate] */
+// 耳孔X轴间距 / Distance between existing screw holes on FLSUN Q5 (mm)
+ear_hole_x = 182.5;
+// 耳孔Y轴偏移 / Distance of screw hole from the front panel (mm)
+ear_hole_y = 7;
+// 底板厚度 / Height/thickness of the base (mm)
+cube_z = 4.4;
+// M4孔径 / Diameter for M4 bolt hole (mm)
+M4_d = 4.2;
+// 墙体嵌入厚度 / Extend and embed into wall to fit around corner (mm)
+wallThickness = 0.2;
 
 /* [Hidden] */
 module end_of_customizer_opts() {}

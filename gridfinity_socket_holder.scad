@@ -1,6 +1,8 @@
 include <modules/module_gridfinity_block.scad>
 
-part = 5; //[1: "METRIC", 2: "IMPERIAL", 3: "Imperial < 1/2\"", 4: "Imperial >= 1/2\"", 5: "Metric >=7mm", 6: "Metric <7mm"]
+/* [套筒收纳 / Socket Holder] */
+// 类型 / Part type
+part = 5; //[1: "METRIC / 公制", 2: "IMPERIAL / 英制", 3: "Imperial < 1/2\" / 英制小于1/2\"", 4: "Imperial >= 1/2\" / 英制大于等于1/2\"", 5: "Metric >=7mm / 公制大于等于7mm", 6: "Metric <7mm / 公制小于7mm"]
 
 /* [Hidden] */
 $fn = 64;
