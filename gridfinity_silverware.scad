@@ -246,7 +246,7 @@ force_render = true;
 
 module end_of_customizer() {}
 silverware_wall_clearance = 5.7;
-// Maximum utensil definitions
+// 餐具定义列表 / Maximum utensil definitions
 silver_defs_all = [
   utensil_1,
   utensil_2,
@@ -287,14 +287,14 @@ function pitches(defs, thickness = chamber_wall_thickness[0], margin = utensil_m
   max( defs[i][1]/2 + defs[i+1][0]/2, defs[i][0]/2 + defs[i+1][1]/2) ];
 
 // ##### Derived variables and values
-// subset of all utensil definitions up to the requested number of utensils
+// 按请求数量截取的餐具定义子集 / subset of all utensil definitions up to the requested number of utensils
 silver_defs = [ for (i=[1:number_of_utensils]) get_utensil_def(i, silver_defs_all) ];
 
-// X, width of combination of all silverware, in gridfinity units
+// X轴，所有餐具组合宽度（格子单位）/ X, width of combination of all silverware, in gridfinity units
 width = ceil((totwidth(silver_defs) + silverware_wall_clearance)/42);
-// Y, max depth of all silverware, in gridfinity units
+// Y轴，所有餐具最大深度（格子单位）/ Y, max depth of all silverware, in gridfinity units
 depth = ceil((maxlen(silver_defs)+2*utensil_margin + silverware_wall_clearance)/42);
-// gridfinity modules expect height in units of 7 mm (but fractions are allowed)
+// 高度（以7mm为单位，允许小数）/ gridfinity modules expect height in units of 7 mm (but fractions are allowed)
 num_z = calcDimensionHeight(height);
 
 
