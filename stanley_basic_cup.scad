@@ -252,31 +252,31 @@ random_seed = 0; //0.0001
 // 强制渲染 / force render on costly components
 force_render = true;
 
-/* [Stanley Pro Shallow] */
+/* [Stanley Pro Shallow / 斯坦利Pro浅型] */
 proshallow_size = [40,55,41];
 proshallow_wall_thickenss = 1.2;
 proshallow_corner_radius = 3.75;
 proshallow_bottom_radius = 3;
 
-/* [Stanley Pro Deep] */
+/* [Stanley Pro Deep / 斯坦利Pro深型] */
 prodeep_size = [40,55,81];
 prodeep_wall_thickenss = 1.2;
 prodeep_corner_radius = 3.75;
 prodeep_bottom_radius = 3;
 
-/* [Stanley FatMax Pro 1-97-519] */
+/* [Stanley FatMax Pro 1-97-519 / 斯坦利FatMax Pro浅型] */
 fatmaxshallow_size = [80,110,49];
 fatmaxshallow_wall_thickenss = 1.8;
 fatmaxshallow_corner_radius = 10;
 fatmaxshallow_bottom_radius = 4;
 
-/* [Stanley FatMax Pro Deep 1-97-521] */
+/* [Stanley FatMax Pro Deep 1-97-521 / 斯坦利FatMax Pro深型] */
 fatmaxdeep_size = [80,108,91];
 fatmaxdeep_wall_thickenss = 1.8;
 fatmaxdeep_corner_radius = 10;
 fatmaxdeep_bottom_radius = 4;
 
-/* [Stanley 25-Compartment 1-92-762] */
+/* [Stanley 25-Compartment 1-92-762 / 斯坦利25格收纳盒] */
 compartment25_size = [52,72,70];
 compartment25_wall_thickenss = 1.2;
 compartment25_corner_radius = 8;
