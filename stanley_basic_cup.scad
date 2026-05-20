@@ -179,7 +179,7 @@ floorpattern_pattern_grid_chamfer = 0; //0.1
 floorpattern_pattern_voronoi_noise = 0.75; //0.01
 // 砖块图案中心权重 / brick pattern center weight
 floorpattern_pattern_brick_weight = 5;
-//$fs for floor pattern, min size face.
+// 地板图案精度（$fs，最小面尺寸） / $fs for floor pattern, min size face.
 floorpattern_pattern_quality = 0.4;//0.1:0.1:2
 
 /* [Wall Cutout / 墙面开口] */
@@ -252,31 +252,31 @@ random_seed = 0; //0.0001
 // 强制渲染 / force render on costly components
 force_render = true;
 
-/* [Stanley Pro Shallow] */
+/* [Stanley Pro Shallow / 斯坦利浅型Pro] */
 proshallow_size = [40,55,41];
 proshallow_wall_thickenss = 1.2;
 proshallow_corner_radius = 3.75;
 proshallow_bottom_radius = 3;
 
-/* [Stanley Pro Deep] */
+/* [Stanley Pro Deep / 斯坦利深型Pro] */
 prodeep_size = [40,55,81];
 prodeep_wall_thickenss = 1.2;
 prodeep_corner_radius = 3.75;
 prodeep_bottom_radius = 3;
 
-/* [Stanley FatMax Pro 1-97-519] */
+/* [Stanley FatMax Pro 1-97-519 / 斯坦利FatMax Pro浅型] */
 fatmaxshallow_size = [80,110,49];
 fatmaxshallow_wall_thickenss = 1.8;
 fatmaxshallow_corner_radius = 10;
 fatmaxshallow_bottom_radius = 4;
 
-/* [Stanley FatMax Pro Deep 1-97-521] */
+/* [Stanley FatMax Pro Deep 1-97-521 / 斯坦利FatMax Pro深型] */
 fatmaxdeep_size = [80,108,91];
 fatmaxdeep_wall_thickenss = 1.8;
 fatmaxdeep_corner_radius = 10;
 fatmaxdeep_bottom_radius = 4;
 
-/* [Stanley 25-Compartment 1-92-762] */
+/* [Stanley 25-Compartment 1-92-762 / 斯坦利25格] */
 compartment25_size = [52,72,70];
 compartment25_wall_thickenss = 1.2;
 compartment25_corner_radius = 8;
