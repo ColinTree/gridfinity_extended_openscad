@@ -1,9 +1,14 @@
 include <modules/module_gridfinity_block.scad>
 include <modules/gridfinity_constants.scad>
 
+/* [General / 基本设置] */
+// 杯体高度 / Cup height in grid units
 cup_height = 5;
+// 胶棒直径 / Glue stick diameter in mm
 stick_diameter = 30;
-easement_z = 0.7; // a slightly large opening at the top for compliance while inserting.
+// 顶部开口余量 / Slightly enlarged opening at top for easier insertion
+easement_z = 0.7;
+// 最小壁厚 / Minimum wall thickness in mm
 minimum_wall = 4;
 
 /* [Hidden] */
