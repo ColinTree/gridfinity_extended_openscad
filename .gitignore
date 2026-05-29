@@ -5,3 +5,4 @@ modules/*.json
 demos/*.json
 generated
 *.disabled
+NUL
