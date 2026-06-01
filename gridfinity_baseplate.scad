@@ -10,8 +10,11 @@ Base_Plate_Options = "default";//[default:Efficient base, cnclaser:CNC or Laser 
 Width = [3, 0]; //0.1
 // Y轴 / Y dimension. grid units (multiples of 42mm) or mm.
 Depth = [2, 0]; //0.1
+// 超尺寸处理方式 / Method to handle oversized dimensions
 oversize_method = "fill"; //[crop, fill]
+// 网格X轴填充对齐 / Grid horizontal alignment within outer bounding area
 position_fill_grid_x = "near";//[near:"← left", center:"↔ center", far:"→ right"]
+// 网格Y轴填充对齐 / Grid vertical alignment within outer bounding area
 position_fill_grid_y = "near";//[far:"↑ up", center:"↕ center", near:"↓ bottom"]
 // X轴外框尺寸 / X outer dimension. grid units (multiples of 42mm) or mm.
 outer_Width = [0, 0]; //0.1
@@ -19,16 +22,21 @@ outer_Width = [0, 0]; //0.1
 outer_Depth = [0, 0]; //0.1
 // Z轴外框尺寸 / z outer dimension. mm.
 outer_Height = 0; //0.1
+// 外框内网格X轴对齐 / Grid X position within outer bounding area
 position_grid_in_outer_x = "center";//[near:"← left", center:"↔ center", far:"→ right"]
+// 外框内网格Y轴对齐 / Grid Y position within outer bounding area
 position_grid_in_outer_y = "center";//[far:"↑ up", center:"↕ center", near:"↓ bottom"]
 // 框架墙高度限制 / Reduce the frame wall size to this value
 Reduced_Wall_Height = -1; //0.1
+// 减薄墙锥度 / Taper the reduced wall
 Reduced_Wall_Taper = false;
+// 底板角圆半径 / Corner radius for the plate outer corners
 plate_corner_radius = 3.75; //0.01
 // 内角圆角半径 / Corner radius for the inner corners (Works well with build_plate_enabled)
 secondary_corner_radius = 3.75; //0.01
 
 /* [Printer bed options / 打印床选项] */
+// 启用打印床分割 / Enable splitting by build plate size
 build_plate_enabled = "disabled";//[disabled, enabled, unique]
 // 均匀分布打印板 / spread out the plates, use if last row is small.
 average_plate_sizes = false;
@@ -57,26 +65,40 @@ Enable_Weight = false;
 Remove_Bottom_Taper = false;
 
 /* [Base Plate Clips / 底板连接件]*/
+// 仅生成连接件 / Generate only the connector piece
 Connector_Only = false;
+// 连接件位置 / Connector placement position
 Connector_Position = "center_wall"; //["center_wall","intersection","both"]
 
+// 启用夹扣连接件 / Enable clip connector
 Connector_Clip_Enabled = false;
+// 夹扣尺寸 / Clip connector size
 Connector_Clip_Size = 10;
+// 夹扣公差 / Clip connector tolerance
 Connector_Clip_Tolerance = 0.1;
 
 // 此功能尚未完善 / This feature is not yet finalised, or working properly.
+// 启用蝶形连接件 / Enable butterfly connector
 Connector_Butterfly_Enabled = false;
+// 蝶形连接件尺寸 / Butterfly connector size
 Connector_Butterfly_Size = [5,4,1.5];
+// 蝶形连接件半径 / Butterfly connector radius
 Connector_Butterfly_Radius = 0.1;
+// 蝶形连接件公差 / Butterfly connector tolerance
 Connector_Butterfly_Tolerance = 0.1;
 
 // 此功能尚未完善 / This feature is not yet finalised, or working properly.
+// 启用耗材插销连接件 / Enable filament pin connector
 Connector_Filament_Enabled = false;
+// 耗材插销直径 / Filament pin diameter
 Connector_Filament_Diameter = 2;
+// 耗材插销长度 / Filament pin length
 Connector_Filament_Length = 8;
 
 // 此功能尚未完善 / This feature is not yet finalised, or working properly.
+// 启用卡扣连接件 / Enable snap connector
 Connector_Snaps_Enabled = "disabled"; //["disabled","larger","smaller"]
+// 卡扣间隙 / Snap connector clearance
 Connector_Snaps_Clearance = 0.2;
 
 /* [Custom Grid / 自定义网格]*/
@@ -108,6 +130,7 @@ fs = 0.1;
 fn = 0;
 
 /* [debug / 调试] */
+// 渲染位置 / Model render position
 Render_Position = "center"; //[default,center,zero]
 // 调试切片 / Debug slice
 cut = [0,0,0]; //0.1
