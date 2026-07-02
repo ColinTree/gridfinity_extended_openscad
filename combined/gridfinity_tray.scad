@@ -75,13 +75,13 @@ horizontal_separator_bend_position = 0;
 horizontal_separator_bend_angle = 0;
 horizontal_separator_bend_separation = 0;
 horizontal_separator_cut_depth=0;
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 horizontal_separator_config = "10.5|21|42|50|60";
 
 /* [Base] */
@@ -147,9 +147,9 @@ wallpattern_strength = 2; //0.1
 wallpattern_walls=[1,1,1,1];  //[0:1:1]
 // rotate the grid
 wallpattern_rotate_grid=false;
-//Size of the hole
+// 孔洞尺寸 / Size of the hole
 wallpattern_cell_size = [10,10]; //0.1
-// Add the pattern to the dividers
+// 分隔墙镂空 / Add the pattern to the dividers
 wallpattern_dividers_enabled="disabled"; //[disabled, horizontal, vertical, both]
 //Number of sides of the hole op
 wallpattern_hole_sides = 6; //[4:square, 6:hex, 8:octo, 64:circle]
@@ -336,13 +336,13 @@ default_horizontal_separator_bend_position = 0; //0.1
 default_horizontal_separator_bend_angle = 45; //0.1
 default_horizontal_separator_bend_separation = 0; //0.1
 default_horizontal_separator_cut_depth = 0;//0.1
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 default_vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 default_vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 default_horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 default_horizontal_separator_config = "10.5|21|42|50|60";
 
 /* Base */

@@ -115,13 +115,13 @@ horizontal_separator_bend_position = 0;
 horizontal_separator_bend_angle = 0;
 horizontal_separator_bend_separation = 0;
 horizontal_separator_cut_depth=0;
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 horizontal_separator_config = "10.5|21|42|50|60";
 
 /* [Base] */
@@ -4222,13 +4222,13 @@ default_horizontal_separator_bend_position = 0; //0.1
 default_horizontal_separator_bend_angle = 45; //0.1
 default_horizontal_separator_bend_separation = 0; //0.1
 default_horizontal_separator_cut_depth = 0;//0.1
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 default_vertical_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 default_vertical_separator_config = "10.5|21|42|50|60";
-// Enable irregular subdivisions
+// 启用不规则分隔 / Enable irregular subdivisions
 default_horizontal_irregular_subdivisions = false;
-// Separator positions are defined in terms of grid units from the left end
+// 分隔位置（从左端起，单位：网格） / Separator positions are defined in terms of grid units from the left end
 default_horizontal_separator_config = "10.5|21|42|50|60";
 
 /* Base */
