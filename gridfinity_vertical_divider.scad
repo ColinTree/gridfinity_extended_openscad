@@ -16,7 +16,7 @@ divider_front_top_inset=20;
 divider_front_top_angle=45;
 divider_back_top_inset=20;
 divider_back_top_angle=45;
-// Tilt angle of each divider in degrees. 0 = upright. Positive leans the top toward +Y (back).
+// 倾斜角 / Tilt angle of each divider in degrees. 0 = upright. Positive leans the top toward +Y (back).
 divider_angle = 0;
 
 /* [Wall Pattern / 墙面镂空] */
