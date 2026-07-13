@@ -7,15 +7,26 @@ use <modules/module_gridfinity_block.scad>
 include <modules/module_patterns.scad>
 
 /* [Divider / 分隔件] */
+// 分隔件数量 / Number of dividers
 divider_count = 4;
+// 分隔件高度（mm） / Divider height (mm)
 divider_height = 50;
+// 分隔件厚度（mm） / Divider wall thickness (mm)
 divider_width = 3;
+// 分隔件底部高度（mm） / Divider base section height (mm)
 divider_base_height = 10;
+// 分隔件圆角半径（mm） / Divider corner radius (mm)
 divider_radius = 5;
+// 前侧顶部内缩量（mm） / Front top inset distance (mm)
 divider_front_top_inset=20;
+// 前侧顶部斜角（度） / Front top angle (degrees)
 divider_front_top_angle=45;
+// 后侧顶部内缩量（mm） / Back top inset distance (mm)
 divider_back_top_inset=20;
+// 后侧顶部斜角（度） / Back top angle (degrees)
 divider_back_top_angle=45;
+// 分隔件倾斜角度（度），0=竖直，正值使顶部向+Y（后方）倾斜 / Tilt angle of each divider in degrees. 0 = upright. Positive leans the top toward +Y (back).
+divider_angle = 0;
 
 /* [Wall Pattern / 墙面镂空] */
 // 启用墙面镂空 / Grid wall patter
@@ -249,6 +260,7 @@ module Gridfinity_Divider(
   frontTopAngle=divider_front_top_angle,
   backTopInset=divider_back_top_inset,
   backTopAngle=divider_back_top_angle,
+  dividerAngle=divider_angle,
   wallpatternEnabled=wallpattern_enabled,
   pattern_settings = PatternSettings(
     patternEnabled = wallpattern_enabled,
@@ -284,6 +296,9 @@ module Gridfinity_Divider(
     canvis = [dividerHeight, num_x*env_pitch().x-env_clearance().x];
     ypos = (num_y*env_pitch().y-env_corner_radius()*2-dividerWidth)/(divider_count-1)*i;
     translate([env_clearance().x/2,env_corner_radius()+dividerWidth+ypos,floorHeight])
+    // Clip anything that would extend below the cup floor when tilted
+    difference(){
+    rotate([dividerAngle,0,0])
     PatternedDivider(
       height = canvis.x,
       length = canvis.y,
@@ -335,5 +350,9 @@ module Gridfinity_Divider(
           rotateGrid = pattern_settings[iPatternRotate],
           patternFs = pattern_settings[iPatternFs]);
         }
+      // Subtract the half-space below the cup floor (local z < 0)
+      translate([-fudgeFactor, -num_y*env_pitch().y, -num_y*env_pitch().y])
+        cube([num_x*env_pitch().x+fudgeFactor*2, num_y*env_pitch().y*2, num_y*env_pitch().y]);
+    }
     }
 }
