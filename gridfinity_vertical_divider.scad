@@ -7,16 +7,25 @@ use <modules/module_gridfinity_block.scad>
 include <modules/module_patterns.scad>
 
 /* [Divider / 分隔件] */
+// 分隔件数量 / Number of dividers
 divider_count = 4;
+// 分隔件高度（mm） / Divider height (mm)
 divider_height = 50;
+// 分隔件厚度（mm） / Divider wall thickness (mm)
 divider_width = 3;
+// 分隔件底部高度（mm） / Divider base section height (mm)
 divider_base_height = 10;
+// 分隔件圆角半径（mm） / Divider corner radius (mm)
 divider_radius = 5;
+// 前侧顶部内缩量（mm） / Front top inset distance (mm)
 divider_front_top_inset=20;
+// 前侧顶部斜角（度） / Front top angle (degrees)
 divider_front_top_angle=45;
+// 后侧顶部内缩量（mm） / Back top inset distance (mm)
 divider_back_top_inset=20;
+// 后侧顶部斜角（度） / Back top angle (degrees)
 divider_back_top_angle=45;
-// Tilt angle of each divider in degrees. 0 = upright. Positive leans the top toward +Y (back).
+// 分隔件倾斜角度（度），0=竖直，正值使顶部向+Y（后方）倾斜 / Tilt angle of each divider in degrees. 0 = upright. Positive leans the top toward +Y (back).
 divider_angle = 0;
 
 /* [Wall Pattern / 墙面镂空] */
