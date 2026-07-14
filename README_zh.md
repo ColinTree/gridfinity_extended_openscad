@@ -107,6 +107,9 @@
 ### FLSUN Q5 底板（gridfinity_baseplate_flsun_q5.scad）
 专为 FLsun Q5 3D 打印机定制的底板脚本版本，确保与打印机尺寸和功能的兼容性。
 
+### 垂直分隔件（gridfinity_vertical_divider.scad）
+在 Gridfinity 收纳盒内生成可自定义的竖向分隔板，可设置数量、高度、宽度及各类倒角选项。新增 `divider_angle`（倾斜角度）参数，支持将分隔板向后方倾斜一定角度（单位：度，0 = 垂直），适合倾斜展示或防止物品滑动。
+
 ## 如何贡献
 
 欢迎贡献代码，共同改进和扩展 Gridfinity Extended 库！贡献方式如下：
